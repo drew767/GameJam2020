@@ -111,6 +111,1386 @@ ModelImporter:
   - first:
       74: -7133049588812931452
     second: Circle in|Torus.003Action.001
+  - first:
+      74: -5791511809027754855
+    second: Base|BaseAction
+  - first:
+      74: 2649574017464018675
+    second: Base|Circle inAction
+  - first:
+      74: -6453175070596755746
+    second: Base|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -4242622425019784859
+    second: Base|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -7292011513647523893
+    second: Base|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: 9071161447964767618
+    second: Base|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: -220424790449427917
+    second: Base|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -7890739267509622165
+    second: Base|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -6494713644042555702
+    second: Base|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: -1150183086122092700
+    second: Base|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: -2875957491780835869
+    second: Base|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: 2875124289318659384
+    second: Base|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 5437722149765885878
+    second: Base|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 1425497182533076800
+    second: Base|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: 6927085739287253782
+    second: Base|Circle_midAction
+  - first:
+      74: 8269698477242777895
+    second: Base|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 2376214934957352879
+    second: Base|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 1999028773501990711
+    second: Base|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -5108229892881238709
+    second: Base|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: 3481102027948661744
+    second: Base|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: -5033827380282845576
+    second: Base|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: -6094850810798154325
+    second: Base|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -7868589080494963443
+    second: Base|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 2510723403164155411
+    second: Base|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -5929319163929742164
+    second: Base|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 408409481707584110
+    second: Base|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: -1285356317054851474
+    second: Base|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: -2159177491205487777
+    second: Base|Circle_outAction
+  - first:
+      74: -4406203778895322772
+    second: Base|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 4773227023378331892
+    second: Base|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: -4026014429235424824
+    second: Base|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -2310176398805902138
+    second: Base|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 5301433801581301013
+    second: Base|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 8303049451848024038
+    second: Base|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 6648420643168447347
+    second: Base|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: -2975070013598303152
+    second: Base|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 1388567355865071108
+    second: Base|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: 4120116369903353427
+    second: Base|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -7782841438387981384
+    second: Base|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 8545846791656513806
+    second: Base|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: 6098856989278736496
+    second: Base|CubeAction
+  - first:
+      74: -8520030702840803515
+    second: Base|Pillar1.001Action
+  - first:
+      74: -8319609182433590886
+    second: Base|Pillar2.001Action
+  - first:
+      74: -4243109722147794285
+    second: Base|Pillar3.001Action
+  - first:
+      74: -1213484902529794248
+    second: Base|Pillar4.001Action
+  - first:
+      74: -8032044164796281848
+    second: Base|PlaneAction
+  - first:
+      74: -3363461023044726393
+    second: Circle_mid|BaseAction
+  - first:
+      74: 6132820259283855619
+    second: Circle_mid|Circle inAction
+  - first:
+      74: 5964680391329583876
+    second: Circle_mid|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: 5572660225896002537
+    second: Circle_mid|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -2472847520971078521
+    second: Circle_mid|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: 6773335366811570555
+    second: Circle_mid|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: -5122860785156960118
+    second: Circle_mid|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -3442316139432393515
+    second: Circle_mid|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -1987327573637012010
+    second: Circle_mid|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 4781714148553029391
+    second: Circle_mid|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 7251933857489883215
+    second: Circle_mid|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -3454411385520707822
+    second: Circle_mid|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 9110243852581349585
+    second: Circle_mid|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 2949844557324505672
+    second: Circle_mid|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -6616517290337813974
+    second: Circle_mid|Circle_midAction
+  - first:
+      74: -8668300885716090959
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: -3793658064647323700
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 2276610284042966865
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: 851592769977669960
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: -9006073441371349098
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 5666002659788544195
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: 6488432407525393913
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -8778712023896926579
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 6977931182745424417
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: 7358364218539631295
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 360767066473220701
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: 700975570211631480
+    second: Circle_mid|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: -1642479336726436355
+    second: Circle_mid|Circle_outAction
+  - first:
+      74: -887187973600458864
+    second: Circle_mid|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: -8226619007861062262
+    second: Circle_mid|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 2432662151237331892
+    second: Circle_mid|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -8010568649505251308
+    second: Circle_mid|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: -374021071623542160
+    second: Circle_mid|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: -4674441475596597644
+    second: Circle_mid|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: -1727077624884093427
+    second: Circle_mid|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: -7200456486334735237
+    second: Circle_mid|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 7168322129461451224
+    second: Circle_mid|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: -6373944519918825333
+    second: Circle_mid|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -7764483989360241622
+    second: Circle_mid|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 1726249764441964674
+    second: Circle_mid|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -8094231664014877497
+    second: Circle_mid|CubeAction
+  - first:
+      74: 8129518335679691755
+    second: Circle_mid|Pillar1.001Action
+  - first:
+      74: 2960372726028851768
+    second: Circle_mid|Pillar2.001Action
+  - first:
+      74: 7070100950277652212
+    second: Circle_mid|Pillar3.001Action
+  - first:
+      74: 5391405542666985675
+    second: Circle_mid|Pillar4.001Action
+  - first:
+      74: -4411148378269483758
+    second: Circle_mid|PlaneAction
+  - first:
+      74: 419842832946386802
+    second: Circle_out|BaseAction
+  - first:
+      74: -5418656643867173474
+    second: Circle_out|Circle inAction
+  - first:
+      74: 5301654322461801505
+    second: Circle_out|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -7107773991226418581
+    second: Circle_out|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -5114041300351419117
+    second: Circle_out|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: 6580347015161996608
+    second: Circle_out|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: -3688227414110068074
+    second: Circle_out|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -4082879574715257989
+    second: Circle_out|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: 734523447021066378
+    second: Circle_out|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 1156265497509327733
+    second: Circle_out|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 5880247482136009017
+    second: Circle_out|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -6584994590828446551
+    second: Circle_out|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 7697139821177866682
+    second: Circle_out|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 2590544439480595138
+    second: Circle_out|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -2064144751822222031
+    second: Circle_out|Circle_midAction
+  - first:
+      74: 2270737197672081586
+    second: Circle_out|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: -4871751887241353225
+    second: Circle_out|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 5008190084717057771
+    second: Circle_out|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -3263396926917520160
+    second: Circle_out|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: 3082644812789664744
+    second: Circle_out|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: -3920208487184783989
+    second: Circle_out|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: 1362948199445243451
+    second: Circle_out|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -6412111546482404180
+    second: Circle_out|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 2583528112245785891
+    second: Circle_out|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -1672645776519651684
+    second: Circle_out|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 6862410723202587717
+    second: Circle_out|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: 2244618339652204925
+    second: Circle_out|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 9136209814795868877
+    second: Circle_out|Circle_outAction
+  - first:
+      74: 1796124204984678114
+    second: Circle_out|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 7632755417886934721
+    second: Circle_out|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 8300989318526177375
+    second: Circle_out|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: 3225246402155146838
+    second: Circle_out|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 5867880712660477170
+    second: Circle_out|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 3076914254922689615
+    second: Circle_out|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 8005163217630913532
+    second: Circle_out|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: 6776243646861158768
+    second: Circle_out|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: -1848478834090022856
+    second: Circle_out|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: -2318875885516223973
+    second: Circle_out|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -7532350841480252970
+    second: Circle_out|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: -2529082901691434844
+    second: Circle_out|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -5678811603587022685
+    second: Circle_out|CubeAction
+  - first:
+      74: 3117842404086905433
+    second: Circle_out|Pillar1.001Action
+  - first:
+      74: 3803311120591171968
+    second: Circle_out|Pillar2.001Action
+  - first:
+      74: 1408086229367735195
+    second: Circle_out|Pillar3.001Action
+  - first:
+      74: -4746416081285592157
+    second: Circle_out|Pillar4.001Action
+  - first:
+      74: -1676881960557692741
+    second: Circle_out|PlaneAction
+  - first:
+      74: 4484752397359314374
+    second: Circle in|BaseAction
+  - first:
+      74: -3541459067772188625
+    second: Circle in|Circle inAction
+  - first:
+      74: 3710683669858980358
+    second: Circle in|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -5054171708040079914
+    second: Circle in|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: 6052359126613801017
+    second: Circle in|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: -7688713972795315068
+    second: Circle in|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 2991412174934943640
+    second: Circle in|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: 483334575322045171
+    second: Circle in|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: 8766319323086050529
+    second: Circle in|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 6310513353697057113
+    second: Circle in|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 337025859248496225
+    second: Circle in|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -3101770240183488644
+    second: Circle in|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: -5803473892775983411
+    second: Circle in|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 4569943905880908133
+    second: Circle in|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -4478818307503370692
+    second: Circle in|Circle_midAction
+  - first:
+      74: 8945508781294667912
+    second: Circle in|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 5293415724875801657
+    second: Circle in|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 752056821378512754
+    second: Circle in|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -2232536174974050762
+    second: Circle in|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: -856194170117783063
+    second: Circle in|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 7753506316052787818
+    second: Circle in|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: -9989523490879828
+    second: Circle in|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -6575016880898861617
+    second: Circle in|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 4339966893859586323
+    second: Circle in|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: 6634989329152154211
+    second: Circle in|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: -5032093731777463338
+    second: Circle in|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: 9158636299929421023
+    second: Circle in|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 6967106234088835353
+    second: Circle in|Circle_outAction
+  - first:
+      74: -7065963227928987821
+    second: Circle in|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 5804599505368893883
+    second: Circle in|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: -7898324648462168371
+    second: Circle in|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -8222850589894184581
+    second: Circle in|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 49152046276909291
+    second: Circle in|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 5720541308797655527
+    second: Circle in|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: -8024856977950371776
+    second: Circle in|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: -4043085099009585734
+    second: Circle in|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 3926330136139616488
+    second: Circle in|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: 4699032943653256182
+    second: Circle in|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -1699995431299473053
+    second: Circle in|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 78238825265813621
+    second: Circle in|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -7192987840721450450
+    second: Circle in|CubeAction
+  - first:
+      74: -4692162250053565182
+    second: Circle in|Pillar1.001Action
+  - first:
+      74: -3797000635115770137
+    second: Circle in|Pillar2.001Action
+  - first:
+      74: -5864813713999527190
+    second: Circle in|Pillar3.001Action
+  - first:
+      74: 3797683544153894881
+    second: Circle in|Pillar4.001Action
+  - first:
+      74: 8861560011306788183
+    second: Circle in|PlaneAction
+  - first:
+      74: -4240539180796622097
+    second: Cube|BaseAction
+  - first:
+      74: 4460011561155112505
+    second: Cube|Circle inAction
+  - first:
+      74: 6588151235032045916
+    second: Cube|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: 3020209903290596485
+    second: Cube|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -264161185188505436
+    second: Cube|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: -8147592604466865844
+    second: Cube|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 4378561678676287485
+    second: Cube|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: 4366320766632035547
+    second: Cube|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: 3082547598216331432
+    second: Cube|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 8931961501858728901
+    second: Cube|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 6141766326788736116
+    second: Cube|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -7275778992320046241
+    second: Cube|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 7201283258714687314
+    second: Cube|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 6520467738793602320
+    second: Cube|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: 2049053205830486172
+    second: Cube|Circle_midAction
+  - first:
+      74: 5552572773213432867
+    second: Cube|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 2933868650822539055
+    second: Cube|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 5783087655402551734
+    second: Cube|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: 8625086001036310862
+    second: Cube|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: -8091036225340487429
+    second: Cube|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 148426769309245491
+    second: Cube|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: 4565818005991828394
+    second: Cube|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -4152577602240921932
+    second: Cube|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 2831646404090939100
+    second: Cube|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -3000377506139417473
+    second: Cube|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: -6996388489913873499
+    second: Cube|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: -3123500002223904323
+    second: Cube|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 814561179241319954
+    second: Cube|Circle_outAction
+  - first:
+      74: -1763492484357859218
+    second: Cube|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: -8410428130384301236
+    second: Cube|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 7547643644248220557
+    second: Cube|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: 4842010576834761230
+    second: Cube|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 1856383567996130482
+    second: Cube|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: -3972357810195242525
+    second: Cube|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: -6429660658174182041
+    second: Cube|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: 5380958758563439399
+    second: Cube|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: -4447138088577560887
+    second: Cube|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: 2840068461563562197
+    second: Cube|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: 4939959020346244997
+    second: Cube|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: -8999277850993944587
+    second: Cube|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -3999578356269874737
+    second: Cube|CubeAction
+  - first:
+      74: -7745220644169482184
+    second: Cube|Pillar1.001Action
+  - first:
+      74: -6163693543871870898
+    second: Cube|Pillar2.001Action
+  - first:
+      74: -1381556405046029044
+    second: Cube|Pillar3.001Action
+  - first:
+      74: -6828464015868021811
+    second: Cube|Pillar4.001Action
+  - first:
+      74: -6045865710964554881
+    second: Cube|PlaneAction
+  - first:
+      74: 836691673972555047
+    second: Pillar2.001|BaseAction
+  - first:
+      74: -5004628670068318796
+    second: Pillar2.001|Circle inAction
+  - first:
+      74: -2767972636343310819
+    second: Pillar2.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: 7187485376117105639
+    second: Pillar2.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -9202421425891469854
+    second: Pillar2.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: -3854996827418084444
+    second: Pillar2.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 5985731348050340917
+    second: Pillar2.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -5124661916780919668
+    second: Pillar2.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -19905879427825195
+    second: Pillar2.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 2572342631077182059
+    second: Pillar2.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 4738289948257615692
+    second: Pillar2.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -3730273956061667844
+    second: Pillar2.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 4845217260924676397
+    second: Pillar2.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 5159224705773842934
+    second: Pillar2.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -7798402359749895803
+    second: Pillar2.001|Circle_midAction
+  - first:
+      74: 7279863022282426578
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 5691125012617219827
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: -1065622290009786398
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: 73788017543717805
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: -7169828807511263955
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 5418786501358572385
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: 924155024530106896
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: 169303298264946199
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: -5748327938273571923
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: 1992882475292695174
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: -5704476147096290594
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: 921042447039639592
+    second: Pillar2.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 4135876624774970078
+    second: Pillar2.001|Circle_outAction
+  - first:
+      74: -5965926736668046633
+    second: Pillar2.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 585780394206483511
+    second: Pillar2.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 4850590960035609344
+    second: Pillar2.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: 6261900043163227309
+    second: Pillar2.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 3794217538811544695
+    second: Pillar2.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 8183749800848911913
+    second: Pillar2.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 3808494770929365550
+    second: Pillar2.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: -1806122774910815492
+    second: Pillar2.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 4091464138106217644
+    second: Pillar2.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: 8646467425142029539
+    second: Pillar2.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -5614033702523679214
+    second: Pillar2.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 7587588087607798051
+    second: Pillar2.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -1081407522174914991
+    second: Pillar2.001|CubeAction
+  - first:
+      74: -7412564798589167516
+    second: Pillar2.001|Pillar1.001Action
+  - first:
+      74: -5862290792324431513
+    second: Pillar2.001|Pillar2.001Action
+  - first:
+      74: 2906307372028613116
+    second: Pillar2.001|Pillar3.001Action
+  - first:
+      74: 6969710837873364251
+    second: Pillar2.001|Pillar4.001Action
+  - first:
+      74: -53185332264689028
+    second: Pillar2.001|PlaneAction
+  - first:
+      74: 4158590261682421717
+    second: Pillar4.001|BaseAction
+  - first:
+      74: 343647082059032993
+    second: Pillar4.001|Circle inAction
+  - first:
+      74: -7264850287041817697
+    second: Pillar4.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -4424759392684190830
+    second: Pillar4.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: 8821958310785228575
+    second: Pillar4.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: 6024948078622175281
+    second: Pillar4.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: -3749048129808868943
+    second: Pillar4.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: 2314951434894445089
+    second: Pillar4.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: 4867692848027981649
+    second: Pillar4.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: -8008402470319769131
+    second: Pillar4.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 5369121767061616514
+    second: Pillar4.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: 354298739004005806
+    second: Pillar4.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 1923878972457421084
+    second: Pillar4.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 3900022197123384089
+    second: Pillar4.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -3460417464057028921
+    second: Pillar4.001|Circle_midAction
+  - first:
+      74: 8501629694161716603
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 7086595213000489601
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: -7759988419832641051
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: 2099914887835476980
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: -2464685603175051644
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 6265917532701637441
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: 8594120178976665656
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: -2641413582931441464
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: -3375781324846548226
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -136505470100868546
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 8306819383849734905
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: -4946042319528706601
+    second: Pillar4.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: -8626156187671559932
+    second: Pillar4.001|Circle_outAction
+  - first:
+      74: 7423624181681860832
+    second: Pillar4.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 3658624453238816132
+    second: Pillar4.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 6149858556447241113
+    second: Pillar4.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -7482086416069172222
+    second: Pillar4.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 731939166035698195
+    second: Pillar4.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 2132010549611122170
+    second: Pillar4.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 5977341726668987409
+    second: Pillar4.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: 9051313401678982854
+    second: Pillar4.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 990736932725296779
+    second: Pillar4.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: -6025172275300760395
+    second: Pillar4.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: 5724098859653847479
+    second: Pillar4.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 155463256058729129
+    second: Pillar4.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -7330151930561571375
+    second: Pillar4.001|CubeAction
+  - first:
+      74: -7473256269223363724
+    second: Pillar4.001|Pillar1.001Action
+  - first:
+      74: 1030603371682576438
+    second: Pillar4.001|Pillar2.001Action
+  - first:
+      74: 6399307327995056903
+    second: Pillar4.001|Pillar3.001Action
+  - first:
+      74: 1683684883751713957
+    second: Pillar4.001|Pillar4.001Action
+  - first:
+      74: 5129035661847963102
+    second: Pillar4.001|PlaneAction
+  - first:
+      74: -8834454071169542547
+    second: Pillar3.001|BaseAction
+  - first:
+      74: 1288273356607930244
+    second: Pillar3.001|Circle inAction
+  - first:
+      74: -7535034109438962609
+    second: Pillar3.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -3052913690993036210
+    second: Pillar3.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: 5346378210594625636
+    second: Pillar3.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: 4280939539028810659
+    second: Pillar3.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 7195771013626746965
+    second: Pillar3.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -2905330785699234399
+    second: Pillar3.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -6622937698823128374
+    second: Pillar3.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: -7127151560009349963
+    second: Pillar3.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: -6609085075703277793
+    second: Pillar3.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -3058752784520691732
+    second: Pillar3.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 5215864544826499178
+    second: Pillar3.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 4292102686296793287
+    second: Pillar3.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -1113576890987543474
+    second: Pillar3.001|Circle_midAction
+  - first:
+      74: -5903114492622911929
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 3627217483750873844
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 6406661460980978451
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -8247834522727739158
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: 7350244071378867953
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 4361145066394038148
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: -8772446861260963561
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: 3994681784745395899
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: -6088547032857914309
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -6525413862550661737
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 6030983543424905442
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: -6006632670090821962
+    second: Pillar3.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: -7662390283190020019
+    second: Pillar3.001|Circle_outAction
+  - first:
+      74: -6011826689913075404
+    second: Pillar3.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: -6776486458900152652
+    second: Pillar3.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: 5149928710329241561
+    second: Pillar3.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -7296876141656795410
+    second: Pillar3.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: -5104414134392704713
+    second: Pillar3.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: -7588831241894880741
+    second: Pillar3.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: -7379293745842307474
+    second: Pillar3.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: 4111500422935399131
+    second: Pillar3.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 6755306744021589826
+    second: Pillar3.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: -7792371669427309847
+    second: Pillar3.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: -1444188014520445537
+    second: Pillar3.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 4721965463687168709
+    second: Pillar3.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: 4665562982900554683
+    second: Pillar3.001|CubeAction
+  - first:
+      74: 435723662413133702
+    second: Pillar3.001|Pillar1.001Action
+  - first:
+      74: 2649002501761132809
+    second: Pillar3.001|Pillar2.001Action
+  - first:
+      74: 8848237106588724168
+    second: Pillar3.001|Pillar3.001Action
+  - first:
+      74: 7569077806394360457
+    second: Pillar3.001|Pillar4.001Action
+  - first:
+      74: 7032235006749418773
+    second: Pillar3.001|PlaneAction
+  - first:
+      74: -7588507480942562612
+    second: Pillar1.001|BaseAction
+  - first:
+      74: 6274705582151295579
+    second: Pillar1.001|Circle inAction
+  - first:
+      74: -6246781954719995082
+    second: Pillar1.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: 9093853095870142373
+    second: Pillar1.001|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: -6740788927085638774
+    second: Pillar1.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: -4357214972882145102
+    second: Pillar1.001|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 5596046279032218093
+    second: Pillar1.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: -5325615143057619061
+    second: Pillar1.001|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -477657607633622075
+    second: Pillar1.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: -3830590666267584447
+    second: Pillar1.001|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 8103089099269746889
+    second: Pillar1.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -8119887886179026582
+    second: Pillar1.001|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 7708122967877032408
+    second: Pillar1.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: -7844556359438135108
+    second: Pillar1.001|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: 2474337200893555614
+    second: Pillar1.001|Circle_midAction
+  - first:
+      74: 2596951187586419814
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: -4691698245883307614
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 2477671640496254656
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -1790574000163093552
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: 2773918833286436557
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: -7036495644357908769
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: -8761715130998117022
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: 3068835203087095223
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: -5690925541499898642
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: 263929847196889276
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: 8133668224280707214
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: 7381440387573947521
+    second: Pillar1.001|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 7312167392167541583
+    second: Pillar1.001|Circle_outAction
+  - first:
+      74: -4434542023645432843
+    second: Pillar1.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: -5557347064167743390
+    second: Pillar1.001|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: -2774993316344304723
+    second: Pillar1.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: 8100295807837182830
+    second: Pillar1.001|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: -4746664480954800365
+    second: Pillar1.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 3680546423432913480
+    second: Pillar1.001|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 2249032703334418991
+    second: Pillar1.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: -5947715529993151485
+    second: Pillar1.001|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: 2453593815786061213
+    second: Pillar1.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: -4868070184435471068
+    second: Pillar1.001|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: 471717858313119260
+    second: Pillar1.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 7496597214633728519
+    second: Pillar1.001|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -7798819226103099774
+    second: Pillar1.001|CubeAction
+  - first:
+      74: 4282644779070918750
+    second: Pillar1.001|Pillar1.001Action
+  - first:
+      74: 7861678969043562521
+    second: Pillar1.001|Pillar2.001Action
+  - first:
+      74: 8371671068545926065
+    second: Pillar1.001|Pillar3.001Action
+  - first:
+      74: -6725014534453294424
+    second: Pillar1.001|Pillar4.001Action
+  - first:
+      74: 51333145833241633
+    second: Pillar1.001|PlaneAction
+  - first:
+      74: -574652650919718922
+    second: Plane|BaseAction
+  - first:
+      74: -6228747520489865800
+    second: Plane|Circle inAction
+  - first:
+      74: 571085327634361600
+    second: Plane|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001
+  - first:
+      74: -9038021803281408878
+    second: Plane|Circle in|Circle in|Torus.001Action.001|Circle in|Torus.001Acti
+  - first:
+      74: 8369923272972305496
+    second: Plane|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Acti
+  - first:
+      74: -7543033496765286951
+    second: Plane|Circle in|Circle in|Torus.001Action|Circle in|Torus.001Action
+  - first:
+      74: 7834976384534178357
+    second: Plane|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002
+  - first:
+      74: 8993224492891811269
+    second: Plane|Circle in|Circle in|Torus.002Action.001|Circle in|Torus.002Acti
+  - first:
+      74: -2275229568784138831
+    second: Plane|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Acti
+  - first:
+      74: 7495445467327960763
+    second: Plane|Circle in|Circle in|Torus.002Action|Circle in|Torus.002Action
+  - first:
+      74: 6218343661503070300
+    second: Plane|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003
+  - first:
+      74: -6211319163783977449
+    second: Plane|Circle in|Circle in|Torus.003Action.001|Circle in|Torus.003Acti
+  - first:
+      74: 3703018833684532689
+    second: Plane|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Acti
+  - first:
+      74: 7790320236940036904
+    second: Plane|Circle in|Circle in|Torus.003Action|Circle in|Torus.003Action
+  - first:
+      74: -2028667124305648427
+    second: Plane|Circle_midAction
+  - first:
+      74: -8050506925623613613
+    second: Plane|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.
+  - first:
+      74: 1568534467398650747
+    second: Plane|Circle_mid|Circle_mid|Torus.001Action.001|Circle_mid|Torus.001A
+  - first:
+      74: 2151156380983518290
+    second: Plane|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001A
+  - first:
+      74: -7063131947305147196
+    second: Plane|Circle_mid|Circle_mid|Torus.001Action|Circle_mid|Torus.001Actio
+  - first:
+      74: 4597875490820598397
+    second: Plane|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.
+  - first:
+      74: 851885464891754757
+    second: Plane|Circle_mid|Circle_mid|Torus.002Action.001|Circle_mid|Torus.002A
+  - first:
+      74: -967461951099281126
+    second: Plane|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002A
+  - first:
+      74: 2718876418309906739
+    second: Plane|Circle_mid|Circle_mid|Torus.002Action|Circle_mid|Torus.002Actio
+  - first:
+      74: 8553422034655142572
+    second: Plane|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.
+  - first:
+      74: -2123145997642794807
+    second: Plane|Circle_mid|Circle_mid|Torus.003Action.001|Circle_mid|Torus.003A
+  - first:
+      74: -1143210756143893105
+    second: Plane|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003A
+  - first:
+      74: -7987527786322580705
+    second: Plane|Circle_mid|Circle_mid|Torus.003Action|Circle_mid|Torus.003Actio
+  - first:
+      74: 6276095799373039624
+    second: Plane|Circle_outAction
+  - first:
+      74: 7469281531269220985
+    second: Plane|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.
+  - first:
+      74: 7182762489346983661
+    second: Plane|Circle_out|Circle_out|Torus.001Action.001|Circle_out|Torus.001A
+  - first:
+      74: -6685192226200750334
+    second: Plane|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001A
+  - first:
+      74: -7627626820176009678
+    second: Plane|Circle_out|Circle_out|Torus.001Action|Circle_out|Torus.001Actio
+  - first:
+      74: 443542656502582399
+    second: Plane|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.
+  - first:
+      74: 2833977610451117324
+    second: Plane|Circle_out|Circle_out|Torus.002Action.001|Circle_out|Torus.002A
+  - first:
+      74: 5277775400136756269
+    second: Plane|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002A
+  - first:
+      74: 3466587603872502590
+    second: Plane|Circle_out|Circle_out|Torus.002Action|Circle_out|Torus.002Actio
+  - first:
+      74: -4216003490846954482
+    second: Plane|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.
+  - first:
+      74: 7194571498540590907
+    second: Plane|Circle_out|Circle_out|Torus.003Action.001|Circle_out|Torus.003A
+  - first:
+      74: 3826744259898269953
+    second: Plane|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003A
+  - first:
+      74: 34769874531465855
+    second: Plane|Circle_out|Circle_out|Torus.003Action|Circle_out|Torus.003Actio
+  - first:
+      74: -4174240525590597537
+    second: Plane|CubeAction
+  - first:
+      74: 5100177781059200201
+    second: Plane|Pillar1.001Action
+  - first:
+      74: 7965639715904107671
+    second: Plane|Pillar2.001Action
+  - first:
+      74: -4246166373359546669
+    second: Plane|Pillar3.001Action
+  - first:
+      74: 888978233340582031
+    second: Plane|Pillar4.001Action
+  - first:
+      74: -5187248419258813496
+    second: Plane|PlaneAction
   externalObjects: {}
   materials:
     materialImportMode: 1

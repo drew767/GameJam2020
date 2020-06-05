@@ -6,7 +6,27 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parasitezombie_Material
+    second: {fileID: 2100000, guid: c6197f1e9e6b95c41a08312682f00bb2, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: parasiteZombie_diffuse
+    second: {fileID: 2800000, guid: 8d8b9b2c6c5273942adbdef7c25486ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: parasiteZombie_normal
+    second: {fileID: 2800000, guid: d79fd45ce9b697243a4ce96ec93edc26, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: parasiteZombie_specular
+    second: {fileID: 2800000, guid: 0938669a6c1f70a4985c5807a0d6de4c, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
