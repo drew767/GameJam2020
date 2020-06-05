@@ -8,3 +8,8 @@
 // Event calls
 //private void OnPauseRequested(object incomingEvent) {}
 //EventSystem.SendEvent(new PauseMenuActivated() { });
+
+class OnPortalDesstroyedEvent
+{
+    public Vector3 position;
+}
