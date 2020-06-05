@@ -176,7 +176,7 @@ public class EnemyController : MonoBehaviour
 	protected virtual void UpdateMove()
 	{
 		var agent = GetComponent<NavMeshAgent>();
-		if(agent != null)
+		if(agent != null && agent.isOnNavMesh)
 		{
 			agent.destination = m_moveTarget;
 		}
