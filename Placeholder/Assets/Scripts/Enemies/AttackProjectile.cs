@@ -41,12 +41,7 @@ public class AttackProjectile : MonoBehaviour
     {
         if((m_startPosition - transform.position).magnitude >= m_maxDistance)
 		{
-			if(m_destroyVfx)
-			{
-				GameObject.Instantiate(m_destroyVfx, transform.position, Quaternion.identity);
-			}
-
-			Destroy(this.gameObject);
+			DestroyProjectile();
 		}
     }
 
@@ -55,6 +50,21 @@ public class AttackProjectile : MonoBehaviour
 		if(other.tag.Equals("Player"))
 		{
 			other.gameObject.SendMessage("OnTakeDamage", m_damage);
+			DestroyProjectile();
 		}
+		else if(m_vfx != null && !other.tag.Equals("Enemy"))
+		{
+			DestroyProjectile();
+		}
+	}
+
+	void DestroyProjectile()
+	{
+		if (m_destroyVfx)
+		{
+			GameObject.Instantiate(m_destroyVfx, transform.position, Quaternion.identity);
+		}
+
+		Destroy(this.gameObject);
 	}
 }
