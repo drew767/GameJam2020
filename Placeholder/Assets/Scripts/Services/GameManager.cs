@@ -41,7 +41,19 @@ public class GameManager : MonoBehaviour
 
     public void InitializeGame() { }
     public void ClearGame() { }
-    public void CheckEndgameCondition() { }
+    public void CheckEndgameCondition() {}
+
+    public GameObject GetNewObject(ESpawnItemType type)
+    {
+        return m_poolOfObjects.GetNewObject(type);
+    }
+
+    public void DestroyObject(ESpawnItemType type, GameObject objectToDestroy)
+    {
+        m_poolOfObjects.DestroyObject(type, objectToDestroy);
+    }
+
 
     public PortalManager m_portalManager;
+    public ObjectPool m_poolOfObjects;
 }
