@@ -58,10 +58,6 @@ public class EnemyController : MonoBehaviour
 
 	void Start()
     {
-		m_moveTarget = new Vector3(10.0f, 0.0f, 0.0f);
-		m_attackTarget = new Vector3(5.0f, 1.0f, -1.0f);
-		m_attackTargetGameObject = null;
-
 		m_rb = GetComponent<Rigidbody>();
     }
 
@@ -117,6 +113,17 @@ public class EnemyController : MonoBehaviour
 
 	protected virtual void UpdateTargets()
 	{
+		PlayerController player = GameManager.GetInstance().Player;
+		if(!player)
+		{
+			m_moveTarget = Vector3.zero;
+			m_attackTarget = Vector3.zero;
+			return;
+		}
+
+		m_moveTarget = player.transform.position;
+		m_attackTarget = player.transform.position;
+
 		//TODO: change it for correct values
 		if((m_moveTarget - transform.position).sqrMagnitude <= 1.0f)
 		{
@@ -146,6 +153,7 @@ public class EnemyController : MonoBehaviour
 	protected virtual void UpdateMove()
 	{
 		Vector3 direction = (m_moveTarget - transform.position).normalized;
+		direction = new Vector3(direction.x, 0.0f, direction.z);
 		m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
 		Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 	}

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
         return Instance;
     }
 
+    PlayerController player = null;
+    public PlayerController Player { get { return player; } }
+
     void Awake()
     {
         if (Instance == null)
@@ -25,7 +28,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        player = playerObj.GetComponent<PlayerController>();
+        Debug.Assert(player, "Player is not in scene");
     }
 
     // Update is called once per frame
