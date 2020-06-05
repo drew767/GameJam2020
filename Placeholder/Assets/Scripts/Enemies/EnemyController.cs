@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -20,7 +21,7 @@ public class EnemyController : MonoBehaviour
 	Transform m_attackProjectileInitialTransform = null;
 
 
-	enum eState
+	public enum eState
 	{
 		IDLE,
 		MOVE,
@@ -29,23 +30,22 @@ public class EnemyController : MonoBehaviour
 	}
 
 	eState m_state;
-	eState State
+	eState m_previousState;
+	public eState State
 	{
 		get { return m_state; }
 		set
 		{
 			if(m_state != value)
 			{
+				m_previousState = m_state;
 				m_state = value;
-				SendMessage("OnStateChanged", m_state, SendMessageOptions.DontRequireReceiver);
-
-				if(m_state == eState.ATTACK)
-				{
-					m_attackCooldownTime = m_attackCooldown;
-				}
+				SendMessage("OnStateChanged", this, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
+	public eState PreviousState { get { return m_previousState; } }
+	public bool CanMoveWhileAttack { get { return m_canMoveWhileAttack; } }
 
 	bool CanAttack { get; set; }
 
@@ -63,6 +63,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+		m_attackCooldownTime -= Time.deltaTime;
+
 		CanAttack = UpdateAttackPossibility();
 		if (CanAttack)
 		{
@@ -100,15 +102,31 @@ public class EnemyController : MonoBehaviour
 		}
     }
 
-	bool UpdateAttackPossibility()
+	bool NeedMoveCloser()
 	{
-		if((transform.position - m_attackTarget).magnitude <= m_attackDistance)
+		if (m_attackTarget == Vector3.zero)
 		{
-			//TODO: Add checks for barriers and etc
+			return false;
+		}
+
+		if ((transform.position - m_attackTarget).magnitude > m_attackDistance)
+		{
 			return true;
 		}
 
 		return false;
+	}
+
+	bool UpdateAttackPossibility()
+	{
+		if(NeedMoveCloser())
+		{
+			return false;
+		}
+
+		//TODO: Add checks for barriers and etc
+
+		return true;
 	}
 
 	protected virtual void UpdateTargets()
@@ -118,16 +136,24 @@ public class EnemyController : MonoBehaviour
 		{
 			m_moveTarget = Vector3.zero;
 			m_attackTarget = Vector3.zero;
+			State = eState.IDLE;
 			return;
 		}
 
 		m_moveTarget = player.transform.position;
 		m_attackTarget = player.transform.position;
 
-		//TODO: change it for correct values
-		if((m_moveTarget - transform.position).sqrMagnitude <= 1.0f)
+		if(!NeedMoveCloser())
 		{
-			State = eState.IDLE;
+			if(m_attackTarget != Vector3.zero)
+			{
+				State = eState.ATTACK;
+			}
+			else
+			{
+				State = eState.IDLE;
+			}
+
 			m_moveTarget = Vector3.zero;
 			m_rb.velocity = Vector3.zero;
 		}
@@ -144,10 +170,6 @@ public class EnemyController : MonoBehaviour
 		{
 			State = eState.MOVE;
 		}
-		if (m_attackTarget != Vector3.zero)
-		{
-			State = eState.ATTACK;
-		}
 	}
 
 	protected virtual void UpdateMove()
@@ -155,21 +177,26 @@ public class EnemyController : MonoBehaviour
 		Vector3 direction = (m_moveTarget - transform.position).normalized;
 		direction = new Vector3(direction.x, 0.0f, direction.z);
 		m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
-		Debug.DrawLine(transform.position, m_moveTarget, Color.red);
+		UnityEngine.Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 	}
 
 	protected virtual void UpdateAttack()
 	{
-		m_attackCooldownTime -= Time.deltaTime;
-		if(m_attackCooldownTime <= 0.0f)
+		if(CanAttack)
 		{
-			m_attackCooldownTime = m_attackCooldown;
-			if(CanAttack)
+			if (m_attackCooldownTime <= 0.0f)
 			{
+				m_attackCooldownTime = m_attackCooldown;
+				
+				SendMessage("OnAttack");
 				GameObject projectile = GameObject.Instantiate(m_attackProjectile.gameObject, m_attackProjectileInitialTransform.position, Quaternion.identity);
 				AttackProjectile attackProjectile = projectile.GetComponent<AttackProjectile>();
 				attackProjectile.AttackTarget = m_attackTarget;
 			}
+		}
+		else if(NeedMoveCloser())
+		{
+			State = eState.MOVE;
 		}
 	}
 
