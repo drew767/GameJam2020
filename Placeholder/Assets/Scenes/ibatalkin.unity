@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_portalManager: {fileID: 0}
+  m_poolOfObjects: {fileID: 0}
 --- !u!4 &1588315365
 Transform:
   m_ObjectHideFlags: 0
