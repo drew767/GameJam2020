@@ -12,7 +12,6 @@ public class ColliderTrigger : MonoBehaviour
     {
         IsTriggered = true;
         m_touchedColliders.Add(other);
-        Debug.Log("Grounded");
     }
 
     private void OnTriggerExit(Collider other)
@@ -20,10 +19,6 @@ public class ColliderTrigger : MonoBehaviour
         m_touchedColliders.Remove(other);
         m_touchedColliders.Remove(null);
         IsTriggered = m_touchedColliders.Count > 0;
-        if (!IsTriggered)
-        {
-            Debug.Log("Not Grounded");
-        }
     }
 
 }

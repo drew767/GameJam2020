@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -152,9 +153,17 @@ public class EnemyController : MonoBehaviour
 
 	protected virtual void UpdateMove()
 	{
-		Vector3 direction = (m_moveTarget - transform.position).normalized;
-		direction = new Vector3(direction.x, 0.0f, direction.z);
-		m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
+		var agent = GetComponent<NavMeshAgent>();
+		if(agent != null)
+		{
+			agent.destination = m_moveTarget;
+		}
+		else
+		{
+			Vector3 direction = (m_moveTarget - transform.position).normalized;
+			direction = new Vector3(direction.x, 0.0f, direction.z);
+			m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
+		}
 		Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 	}
 
