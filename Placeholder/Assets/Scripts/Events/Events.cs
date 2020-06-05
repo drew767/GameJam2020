@@ -11,5 +11,5 @@
 
 class OnPortalDesstroyedEvent
 {
-    public Vector3 position;
+    public Vector3 position = Vector3.zero;
 }
