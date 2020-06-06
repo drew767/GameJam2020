@@ -19,9 +19,9 @@ public class LootComponent : MonoBehaviour
 
     void OnStateChanged(EnemyController enemy)
     {
-        if (enemy.State == eState.DEAD)
+        if (enemy.State == EnemyController.eState.DEAD)
         {
-            GameObject instFoam = Instantiate(foam, transform.position, Quaternion.identity);
+            GameObject instFoam = Instantiate(loot, transform.position, Quaternion.identity);
         }
     }
 }
