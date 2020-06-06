@@ -21,10 +21,11 @@ public class ObjectPool : MonoBehaviour
     [System.Serializable]
     public class PoolItem
     {
-        PoolItem()
+        public void SetupPoolitem()
         {
             m_currentNumberOfInstances = 0;
             m_requestedNumberOfInstances = m_defaultReserv;
+            Debug.Log("PoolItem()");
         }
 
         public ESpawnItemType m_id;
@@ -42,7 +43,7 @@ public class ObjectPool : MonoBehaviour
         }
 
         public int GetRequestedNumber() { return m_requestedNumberOfInstances; }
-        public int GetCurrentNumber() { return m_requestedNumberOfInstances; }
+        public int GetCurrentNumber() { return m_currentNumberOfInstances; }
     }
 
     [SerializeField]
@@ -55,6 +56,7 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < m_prefabs.Count; i++)
         {
+            m_prefabs[i].SetupPoolitem();
             m_deactivated.Add(m_prefabs[i].m_id, new List<GameObject>());
             m_active.Add(m_prefabs[i].m_id, new List<GameObject>());
         }
@@ -62,6 +64,11 @@ public class ObjectPool : MonoBehaviour
 
     void Update()
     {
+        for (int i = 0; i < m_prefabs.Count; i++)
+        {
+            Debug.Log(m_prefabs[i].GetCurrentNumber() + " " + m_prefabs[i].GetRequestedNumber());
+        }
+
         for (int i = 0; i < m_prefabs.Count; i++)
         {
             List<GameObject> listOfTypedObjects = m_deactivated[m_prefabs[i].m_id];
