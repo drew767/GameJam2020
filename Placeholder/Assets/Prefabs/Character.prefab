@@ -858,9 +858,9 @@ MonoBehaviour:
   verticalSensitivity: 200
   jumpCooldown: 0.3
   jumpCharges: 2
-  jumpForce: 600
+  jumpForce: 630
   dashCooldown: 0.3
-  dashDuration: 0.3
+  dashDuration: 0.1
   maxSpeedDash: 60
   dashCharges: 2
   health: 100
