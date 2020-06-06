@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class WeaponBullet : MonoBehaviour {
-
+public class WeaponBullet : MonoBehaviour
+{
+	[SerializeField]
+	int m_damage = 10;
 	[Tooltip("Furthest distance bullet will look for target")]
 	public float maxDistance = 1000000;
 	RaycastHit hit;
@@ -27,7 +30,7 @@ public class WeaponBullet : MonoBehaviour {
 			{
 				if(hit.transform.tag == "Enemy")
 				{
-					hit.transform.gameObject.SendMessage("TakeDamage", 50);
+					hit.transform.gameObject.SendMessage("TakeDamage", m_damage);
 					Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
 					Destroy(gameObject);
 				}

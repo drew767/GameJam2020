@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 469018}
   - component: {fileID: 6272620018997092986}
   m_Layer: 8
-  m_Name: WeaponWithSight_semi
+  m_Name: WeaponRifle_auto
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,16 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1380834a03702fc4ab6a73ccbce64b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStyle: 0
+  currentStyle: 1
   mls: {fileID: 0}
   walkingSpeed: 3
   runningSpeed: 5
-  bulletsIHave: 9999
-  bulletsInTheGun: 80
-  amountOfBulletsPerLoad: 80
+  bulletsIHave: 200
+  bulletsInTheGun: 30
+  amountOfBulletsPerLoad: 30
   currentGunPosition: {x: 0, y: 0, z: 0}
   restPlacePosition: {x: -0.07, y: -0.06, z: 0.4}
-  aimPlacePosition: {x: 0, y: -0.05, z: 0.29}
+  aimPlacePosition: {x: 0, y: -0.03, z: 0.3}
   gunAimTime: 0.05
   reloading: 0
   mouseSensitvity_notAiming: 4
@@ -69,7 +69,7 @@ MonoBehaviour:
   forwardRotationAmount: {x: 1, y: 1}
   bulletSpawnPlace: {fileID: 3849275942093782068}
   bullet: {fileID: 128836, guid: 94a45112080934f49ab5ba060439ceb0, type: 3}
-  roundsPerSecond: 100
+  roundsPerSecond: 10
   recoilAmount_z: 0.5
   recoilAmount_x: 0.5
   recoilAmount_y: 0.5
