@@ -86,7 +86,7 @@ MonoBehaviour:
   m_attackDistance: 2
   m_attackCooldown: 1
   m_canMoveWhileAttack: 0
-  m_attackProjectile: {fileID: 6556093359621073055, guid: 7c34b63f714cc024498cb8efb8669f39, type: 3}
+  m_attackProjectileType: 7
   m_attackProjectileInitialTransform: {fileID: 2518556053207102980}
 --- !u!114 &7643027564682049255
 MonoBehaviour:

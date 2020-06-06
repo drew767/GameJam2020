@@ -28,10 +28,9 @@ public class EnemyController : MonoBehaviour, IPooledObject
 	[SerializeField]
 	bool m_canMoveWhileAttack = false;
 	[SerializeField]
-	AttackProjectile m_attackProjectile = null;
+    public ESpawnItemType m_attackProjectileType;
 	[SerializeField]
 	Transform m_attackProjectileInitialTransform = null;
-
 
 	public enum eState
 	{
@@ -227,9 +226,12 @@ public class EnemyController : MonoBehaviour, IPooledObject
 				m_attackCooldownTime = m_attackCooldown;
 				
 				SendMessage("OnAttack");
-				GameObject projectile = GameObject.Instantiate(m_attackProjectile.gameObject, m_attackProjectileInitialTransform.position, Quaternion.identity);
+				GameObject projectile = GameManager.GetInstance().GetNewObject(m_attackProjectileType);
+				projectile.transform.position = m_attackProjectileInitialTransform.position;
 				AttackProjectile attackProjectile = projectile.GetComponent<AttackProjectile>();
 				attackProjectile.AttackTarget = m_attackTarget;
+				projectile.SetActive(true);
+				attackProjectile.Setup();
 			}
 		}
 		else if(NeedMoveCloser())
