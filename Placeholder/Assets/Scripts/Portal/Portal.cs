@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,23 @@ public class Portal : MonoBehaviour, IPooledObject
     #endregion
 
     public Transform m_spawnPoint;
+
+    public float m_spawnPickWillBeReachedAfterSecondsFromSpawn = 1000.0f;
+    public float m_minMobsInSecond = 0.1f;
+    public float m_maxMobsInSecond = 5.0f;
+    float m_timeBetweenSpawn;
+    float m_timeSinceLastSpawn;
+    float m_timeSinceOpened;
+
+    [Serializable]
+    public class SpawnOjbectInfo
+	{
+        public ESpawnItemType m_type = ESpawnItemType.SlowEnemy;
+        public float m_weight = 50.0f;
+    }
+
+    [SerializeField]
+    List<SpawnOjbectInfo> m_spawnObjects = new List<SpawnOjbectInfo>();
 
     // Start is called before the first frame update
     void Start()
@@ -47,26 +65,26 @@ public class Portal : MonoBehaviour, IPooledObject
         Gizmos.DrawSphere(m_spawnPoint.position, 1);
     }
 
-    public float m_spawnPickWillBeReachedAfterSecondsFromSpawn = 1000.0f;
-    public float m_minMobsInSecond = 0.1f;
-    public float m_maxMobsInSecond = 5.0f;
-    float m_timeBetweenSpawn;
-    float m_timeSinceLastSpawn;
-    float m_timeSinceOpened;
-
     void SpawnMob()
     {
-        float chance = Random.Range(0.0f, 100.0f);
+        float weight = 0.0f;
+        foreach(var spawnObject in m_spawnObjects)
+		{
+            weight += spawnObject.m_weight;
+		}
+
+        float chance = UnityEngine.Random.Range(0.0f, weight);
+        weight = 0.0f;
         ESpawnItemType type = ESpawnItemType.SlowEnemy;
-        
-        if (chance <= m_mobSlowChance)
-        {
-            type = ESpawnItemType.SlowEnemy;
-        }
-        else if (chance <= m_mobSlowChance + m_mobSpeedChance)
-        {
-            type = ESpawnItemType.SpeedEnemy;
-        }
+        foreach (var spawnObject in m_spawnObjects)
+		{
+            weight += spawnObject.m_weight;
+            if(chance <= weight)
+			{
+                type = spawnObject.m_type;
+                break;
+			}
+		}
 
         GameObject mob = GameManager.GetInstance().GetNewObject(type);
         mob.SetActive(true);
@@ -76,7 +94,4 @@ public class Portal : MonoBehaviour, IPooledObject
 
         m_timeSinceLastSpawn = 0.0f;
     }
-
-    public float m_mobSlowChance = 50.0f;
-    public float m_mobSpeedChance = 50.0f;
 }

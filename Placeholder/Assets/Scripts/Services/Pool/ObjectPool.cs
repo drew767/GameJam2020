@@ -9,7 +9,7 @@ public enum ESpawnItemType
     Portal,
     SlowEnemy,
     SpeedEnemy,
-    Enemy3,
+    RangeEnemy,
     Enemy4,
     Enemy5,
     Bullet,
