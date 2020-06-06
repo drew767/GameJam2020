@@ -74,9 +74,22 @@ public class EnemyController : MonoBehaviour, IPooledObject
     {
 		m_rb = GetComponent<Rigidbody>();
 		m_navMeshAgent = GetComponent<NavMeshAgent>();
-    }
 
-    void Update()
+		if (m_navMeshAgent)
+		{
+			m_navMeshAgent.enabled = true;
+		}
+	}
+
+	private void OnDisable()
+	{
+		if(m_navMeshAgent)
+		{
+			m_navMeshAgent.enabled = false;
+		}
+	}
+
+	void Update()
     {
 		m_attackCooldownTime -= Time.deltaTime;
 
