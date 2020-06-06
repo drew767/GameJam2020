@@ -114,26 +114,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetNewObject(ESpawnItemType type)
     {
-        //switch (type)
-        //{
-        //    case ESpawnItemType.Portal:
-        //        break;
-        //    case ESpawnItemType.Enemy1:
-        //        break;
-        //    case ESpawnItemType.Enemy2:
-        //        break;
-        //    case ESpawnItemType.Enemy3:
-        //        break;
-        //    case ESpawnItemType.Enemy4:
-        //        break;
-        //    case ESpawnItemType.Enemy5:
-        //        break;
-        //    case ESpawnItemType.Bullet:
-        //        break;
-        //    default:
-        //        break;
-        //}
-
         return m_poolOfObjects.GetNewObject(type);
     }
 
@@ -157,6 +137,11 @@ public class GameManager : MonoBehaviour
 
     PlayerController player = null;
     public PlayerController Player { get { return player; } }
+
+    public bool GetIsGameTicking()
+    {
+        return m_gameIsTicking;
+    }
 
     float m_gameTime = 0.0f;
     bool m_gameIsTicking = false;

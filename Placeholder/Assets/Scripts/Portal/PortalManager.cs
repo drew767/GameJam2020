@@ -20,11 +20,21 @@ public class PortalManager : MonoBehaviour
         }
 
         EventSystem.RegisterListener<OnPortalDesstroyedEvent>(OnPortalDestroyed);
+
+        m_timeSinceLastSpawn = m_timeBetweenSpawnPortal / 1.1f;
     }
 
     void Update()
     {
-        SpawnPortal();
+        if (m_timeSinceLastSpawn >= m_timeBetweenSpawnPortal && GameManager.GetInstance().GetIsGameTicking())
+        {
+            SpawnPortal();
+            m_timeSinceLastSpawn = 0.0f;
+        }
+        else if (GameManager.GetInstance().GetIsGameTicking())
+        {
+            m_timeSinceLastSpawn += Time.deltaTime;
+        }
     }
 
     void SpawnPortal()
@@ -42,6 +52,9 @@ public class PortalManager : MonoBehaviour
             portal.transform.rotation = Quaternion.identity;
         }
     }
+
+    float m_timeSinceLastSpawn;
+    public float m_timeBetweenSpawnPortal = 33.0f;
 
     private void OnPortalDestroyed(object incomingEvent) 
     {

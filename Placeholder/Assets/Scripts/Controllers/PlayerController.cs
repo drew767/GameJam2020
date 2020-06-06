@@ -109,8 +109,6 @@ public class PlayerController : MonoBehaviour
     {
     }
 
-
-
     float GetForceScaler(float dot, float k)
     {
         return Mathf.Clamp( 1f - k * (1f + dot) / 2f, -1, 1);

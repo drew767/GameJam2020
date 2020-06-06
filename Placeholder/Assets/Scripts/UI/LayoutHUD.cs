@@ -23,5 +23,43 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
     void Update()
     {
         m_timer.text = GameManager.GetInstance().GetGameTimeInString();
+        UpdatePortalProgress();
+    }
+
+    PortalTrigger m_lastTriggeredPortal;
+
+    private void OnPortalDesstroyedEvent(object incomingEvent)
+    {
+        m_lastTriggeredPortal = null;
+        // show message that portal closed
+        HidePortalProgress();
+    }
+    private void OnBeginTriggerPortal(object incomingEvent) 
+    {
+        m_lastTriggeredPortal = ((OnPortalBeginTrigger)incomingEvent).portalTrigger;
+        ShowPortalProgress();
+    }
+    private void OnEndTriggerPortal(object incomingEvent) 
+    {
+        m_lastTriggeredPortal = null;
+        HidePortalProgress();
+    }
+
+    private void HidePortalProgress()
+    {
+
+    }
+
+    private void ShowPortalProgress()
+    {
+
+    }
+
+    private void UpdatePortalProgress()
+    {
+        if (m_lastTriggeredPortal)
+        {
+            // update it
+        }
     }
 }

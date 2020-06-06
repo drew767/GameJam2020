@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PortalTrigger : MonoBehaviour
+{
+    public Portal portalRef;
+    public float m_timeSincePlayerInside;
+    public bool m_playerIsInside = false;
+    public float m_timeNeedToWaitToDestroy;
+
+    void Update()
+    {
+        if (m_playerIsInside)
+        {
+            m_timeSincePlayerInside += Time.deltaTime;
+        }
+        else if (m_timeSincePlayerInside > 0)
+        {
+            m_timeSincePlayerInside -= Time.deltaTime;
+        }
+
+        if (m_timeSincePlayerInside > m_timeNeedToWaitToDestroy)
+        {
+            GameManager.GetInstance().DestroyObject(portalRef.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        m_playerIsInside = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        m_playerIsInside = false;
+    }
+}

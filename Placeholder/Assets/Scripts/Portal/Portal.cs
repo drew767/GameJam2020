@@ -11,6 +11,9 @@ public class Portal : MonoBehaviour, IPooledObject
         m_timeBetweenSpawn = 1 / m_minMobsInSecond;
         m_timeSinceLastSpawn = 0.0f;
         m_timeSinceOpened = 0.0f;
+        m_trigerRef.m_playerIsInside = false;
+        m_trigerRef.m_timeSincePlayerInside = 0.0f;
+        m_trigerRef.m_timeNeedToWaitToDestroy = m_timeNeededToPortalDestroy;
     }
     public void OnDestroy() 
     {
@@ -55,7 +58,7 @@ public class Portal : MonoBehaviour, IPooledObject
 
         if (m_timeSinceLastSpawn >= m_timeBetweenSpawn)
         {
-            SpawnMob();
+            //SpawnMob();
         }
     }
 
@@ -94,4 +97,7 @@ public class Portal : MonoBehaviour, IPooledObject
 
         m_timeSinceLastSpawn = 0.0f;
     }
+
+    public float m_timeNeededToPortalDestroy = 30.0f;
+    public PortalTrigger m_trigerRef;
 }

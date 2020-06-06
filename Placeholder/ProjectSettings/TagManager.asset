@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - PortalManager
   - MobSpawnPoint
+  - Weapon
+  - SecondCamera
+  - BulletSpawn
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - PostProcessing
   - IgnorePlayerCollider
   - PlayerCollider
-  - 
+  - Portal
   - 
   - 
   - 

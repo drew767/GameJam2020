@@ -13,3 +13,11 @@ class OnPortalDesstroyedEvent
 {
     public Vector3 position = Vector3.zero;
 }
+
+class OnPortalBeginTrigger
+{
+    public PortalTrigger portalTrigger = null;
+}
+class OnPortalEndTrigger
+{
+}
