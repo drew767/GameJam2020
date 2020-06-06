@@ -97,6 +97,9 @@ public class LayoutManager : MonoBehaviour
         ilayoutItemInterface.OnLoad();
         layoutItem.m_layoutGameObject.SetActive(true);
         m_activatedLayouts.Add(layoutItem);
+
+        if(id != ELayoutId.Hud)
+            CursorLock.Unlock();
     }
 
     public void PopLayout()
@@ -115,6 +118,7 @@ public class LayoutManager : MonoBehaviour
             m_activatedLayouts[m_activatedLayouts.Count - 1].m_layoutGameObject.GetComponent<ILayoutItem>().OnReactivationFromBackground();
             m_activatedLayouts[m_activatedLayouts.Count - 1].m_layoutGameObject.SetActive(true);
         }
+        CursorLock.Lock();
     }
 
     public void ClearLayoutStack()
@@ -125,6 +129,7 @@ public class LayoutManager : MonoBehaviour
             item.m_layoutGameObject.SetActive(false);
         }
         m_activatedLayouts.Clear();
+        CursorLock.Lock();
     }
 }
 

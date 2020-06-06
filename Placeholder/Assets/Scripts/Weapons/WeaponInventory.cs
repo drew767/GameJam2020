@@ -116,6 +116,24 @@ public class WeaponInventory : MonoBehaviour {
 			currentGunCounter = 1;
 			StartCoroutine("Spawn",currentGunCounter);
 		}
+		if (Input.GetKeyDown(KeyCode.Alpha3) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 2;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha4) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 3;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha5) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 4;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
 
 	}
 
@@ -129,7 +147,7 @@ public class WeaponInventory : MonoBehaviour {
 		else
 			print ("Missing Weapon Changing music clip.");
 		if(currentGun){
-			if(currentGun.name.Contains("Gun")){
+			if(currentGun.name.Contains("Weapon")){
 
 				currentHAndsAnimator.SetBool("changingWeapon", true);
 
@@ -169,8 +187,8 @@ public class WeaponInventory : MonoBehaviour {
 	* Assigns Animator to the script so we can use it in other scripts of a current gun.
 	*/
 	void AssignHandsAnimator(GameObject _currentGun){
-		if(_currentGun.name.Contains("Gun")){
-			currentHAndsAnimator = currentGun.GetComponent<GunScript>().handsAnimator;
+		if(_currentGun.name.Contains("Weapon")){
+			currentHAndsAnimator = currentGun.GetComponent<WeaponScript>().handsAnimator;
 		}
 	}
 
