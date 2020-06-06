@@ -1491,7 +1491,17 @@ ModelImporter:
   - first:
       74: -5187248419258813496
     second: Plane|PlaneAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glow.001
+    second: {fileID: 2100000, guid: 5c612f11de159fa45bdadce3fb31b0df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: portal.001
+    second: {fileID: 2100000, guid: 5c612f11de159fa45bdadce3fb31b0df, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
