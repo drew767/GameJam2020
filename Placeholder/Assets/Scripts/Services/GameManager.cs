@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindPooolManager();
         FindPlayer();
+        FindPortalManager();
     }
 
     void FindPlayer()
@@ -35,6 +37,20 @@ public class GameManager : MonoBehaviour
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<PlayerController>();
         Debug.Assert(player, "Player is not in scene");
+    }
+
+    void FindPortalManager()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("PortalManager");
+        m_portalManager = playerObj.GetComponent<PortalManager>();
+
+        Debug.Assert(player, "PortalManager is not in scene");
+    }
+
+    void FindPooolManager()
+    {
+        m_poolOfObjects = gameObject.GetComponent<ObjectPool>();
+        Debug.Assert(m_poolOfObjects, "PoolManager is not in scene");
     }
 
     // Update is called once per frame
@@ -97,6 +113,26 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetNewObject(ESpawnItemType type)
     {
+        //switch (type)
+        //{
+        //    case ESpawnItemType.Portal:
+        //        break;
+        //    case ESpawnItemType.Enemy1:
+        //        break;
+        //    case ESpawnItemType.Enemy2:
+        //        break;
+        //    case ESpawnItemType.Enemy3:
+        //        break;
+        //    case ESpawnItemType.Enemy4:
+        //        break;
+        //    case ESpawnItemType.Enemy5:
+        //        break;
+        //    case ESpawnItemType.Bullet:
+        //        break;
+        //    default:
+        //        break;
+        //}
+
         return m_poolOfObjects.GetNewObject(type);
     }
 
@@ -124,6 +160,6 @@ public class GameManager : MonoBehaviour
     float m_gameTime = 0.0f;
     bool m_gameIsTicking = false;
     bool m_gameIsFinished = false;
-    public PortalManager m_portalManager;
-    public ObjectPool m_poolOfObjects;
+    protected PortalManager m_portalManager;
+    protected ObjectPool m_poolOfObjects;
 }
