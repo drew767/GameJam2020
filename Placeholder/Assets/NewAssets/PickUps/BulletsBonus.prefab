@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pickupType: 0
-  m_respawnTime: 10000
+  m_respawnTime: 30
   movementSpeed: 2
   height: 0.001
 --- !u!136 &7823265578960034258

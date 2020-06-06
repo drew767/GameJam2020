@@ -14,7 +14,7 @@ public enum EPickupType
 public class Pickup : MonoBehaviour
 {
     public EPickupType m_pickupType = EPickupType.Ammo;
-    public float m_respawnTime = 30.0f;
+    public float m_respawnTime = 2.0f;
 
     float m_timeSincePickUp = 10000.0f;
     // Start is called before the first frame update
@@ -26,11 +26,14 @@ public class Pickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         m_timeSincePickUp = 0.0f;
+        gameObject.SetActive(false);
+        other.gameObject.GetComponent<PlayerController>().AddBonus(m_pickupType);
     }
 
     public bool TimeToActivate()
     {
         m_timeSincePickUp += Time.deltaTime;
+
         if (!gameObject.activeSelf && m_timeSincePickUp > m_respawnTime)
         {
             return true;
@@ -41,9 +44,9 @@ public class Pickup : MonoBehaviour
     //adjust this to change speed
     float rotationSpeed = 1f;
     //adjust this to change speed
-    public float movementSpeed = 2f;
+    public float movementSpeed = 5f;
     //adjust this to change how high it goes
-    public float height = 0.001f;
+    public float height = 0.002f;
 
     void Update()
     {
