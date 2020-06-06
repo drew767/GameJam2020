@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bullets
+  m_Shader: {fileID: -6465566751694194690, guid: c5e846a067f8d5b479b0c56e3ebb08a7, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CameraOpaqueTexture:
+        m_Texture: {fileID: 2800000, guid: 098581a8a020f934fb4f4deec9f52040, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_65CF77B7: 0.1
+    - Vector1_B1B900F9: 1
+    - Vector1_B3026C3C: 4.8
+    - Vector1_C65DF36B: 200
+    m_Colors:
+    - Color_B4C81CF6: {r: 0.6211448, g: 4.5032997, b: 0.3105724, a: 0}
+  m_BuildTextureStacks: []

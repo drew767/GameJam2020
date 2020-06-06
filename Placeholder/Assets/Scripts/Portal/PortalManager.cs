@@ -47,7 +47,6 @@ public class PortalManager : MonoBehaviour
             m_deactivatedSpawns.Remove(currentSpawn);
 
             GameObject portal = GameManager.GetInstance().GetNewObject(ESpawnItemType.Portal);
-            portal.SetActive(true);
             portal.transform.position = currentSpawn.position;
             portal.transform.rotation = Quaternion.identity;
         }

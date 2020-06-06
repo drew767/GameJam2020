@@ -515,19 +515,20 @@ public class WeaponScript : MonoBehaviour {
 	 */
 	[Tooltip("HUD bullets to display bullet count on screen. Will be find under name 'HUD_bullets' in scene.")]
 	public TextMesh HUD_bullets;
-	void OnGUI(){
-		if(!HUD_bullets){
-			try{
-				HUD_bullets = GameObject.Find("HUD_bullets").GetComponent<TextMesh>();
-			}
-			catch(System.Exception ex){
-				print("Couldnt find the HUD_Bullets ->" + ex.StackTrace.ToString());
-			}
-		}
-		if(mls && HUD_bullets)
-			HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+	void OnGUI()
+	{
+		//	if(!HUD_bullets){
+		//		try{
+		//			HUD_bullets = GameObject.Find("HUD_bullets").GetComponent<TextMesh>();
+		//		}
+		//		catch(System.Exception ex){
+		//			print("Couldnt find the HUD_Bullets ->" + ex.StackTrace.ToString());
+		//		}
+		//	}
+		//	if(mls && HUD_bullets)
+		//		HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
 
-		DrawCrosshair();
+		//	DrawCrosshair();
 	}
 
 	[Header("Crosshair properties")]

@@ -207,6 +207,18 @@ public class PlayerController : MonoBehaviour
     bool m_jumpedRecently = false;
     bool m_dashedRecently = false;
 
+    void AddBonus(EPickupType pickupType)
+    {
+        switch (pickupType)
+        {
+            case EPickupType.Ammo:
+                break;
+            case EPickupType.Health:
+                break;
+            default:
+                break;
+        }
+    }
     private void FixedUpdate()
     {
         var inputState = m_inputState.GetInputState();
