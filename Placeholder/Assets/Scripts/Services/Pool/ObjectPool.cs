@@ -12,7 +12,8 @@ public enum ESpawnItemType
     RangeEnemy,
     Enemy4,
     Enemy5,
-    Bullet,
+    ProjectileBlackHole,
+    MeleeAttack
 }
 
 public class ObjectPool : MonoBehaviour
@@ -151,10 +152,12 @@ public class ObjectPool : MonoBehaviour
         {
             if (m_prefabs[i].m_id == type)
             {
+                // GameObject newGO = Instantiate(m_prefabs[i].m_prefab, new Vector3(-100, -100, -100), Quaternion.identity);
                 GameObject newGO = Instantiate(m_prefabs[i].m_prefab);
                 newGO.SetActive(false);
                 m_deactivated[type].Add(newGO);
                 m_prefabs[i].IncrementCurrentNumber();
+
 
                 IPooledObject pooledObject = newGO.GetComponent<IPooledObject>();
                 if (pooledObject == null)

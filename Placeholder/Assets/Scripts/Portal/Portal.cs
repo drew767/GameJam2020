@@ -64,8 +64,8 @@ public class Portal : MonoBehaviour, IPooledObject
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(m_spawnPoint.position, 1);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawSphere(m_spawnPoint.position, 1);
     }
 
     void SpawnMob()
