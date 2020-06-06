@@ -56,10 +56,12 @@ public class EnemyController : MonoBehaviour
 	Vector3 m_moveTarget = Vector3.zero;
 	GameObject m_attackTargetGameObject = null;
 	Vector3 m_attackTarget = Vector3.zero;
+	NavMeshAgent m_navMeshAgent = null;
 
 	void Start()
     {
 		m_rb = GetComponent<Rigidbody>();
+		m_navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -156,7 +158,14 @@ public class EnemyController : MonoBehaviour
 			}
 
 			m_moveTarget = Vector3.zero;
-			m_rb.velocity = Vector3.zero;
+			if(m_navMeshAgent && m_navMeshAgent.isOnNavMesh)
+			{
+				m_navMeshAgent.destination = transform.position;
+			}
+			else
+			{
+				m_rb.velocity = Vector3.zero;
+			}
 		}
 
 		if(m_attackTarget != Vector3.zero)
@@ -175,10 +184,9 @@ public class EnemyController : MonoBehaviour
 
 	protected virtual void UpdateMove()
 	{
-		var agent = GetComponent<NavMeshAgent>();
-		if(agent != null)
+		if(m_navMeshAgent != null && m_navMeshAgent.isOnNavMesh)
 		{
-			agent.destination = m_moveTarget;
+			m_navMeshAgent.destination = m_moveTarget;
 		}
 		else
 		{
