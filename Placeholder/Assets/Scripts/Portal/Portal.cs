@@ -58,7 +58,7 @@ public class Portal : MonoBehaviour, IPooledObject
 
         if (m_timeSinceLastSpawn >= m_timeBetweenSpawn)
         {
-            //SpawnMob();
+            SpawnMob();
         }
     }
 
