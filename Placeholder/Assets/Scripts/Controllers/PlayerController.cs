@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
     bool m_jumpedRecently = false;
     bool m_dashedRecently = false;
 
-    void AddBonus(EPickupType pickupType)
+    public void AddBonus(EPickupType pickupType)
     {
         switch (pickupType)
         {
