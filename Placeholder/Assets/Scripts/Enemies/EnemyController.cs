@@ -4,8 +4,19 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IPooledObject
 {
+    #region IPooledObject
+    public void OnSpawned()
+    {
+    }
+    public void OnDestroy()
+    {
+    }
+    public ESpawnItemType GetObjectType() { return type; }
+	#endregion
+
+	public ESpawnItemType type;
 	[SerializeField]
 	int m_healt = 100;
 	[SerializeField]

@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f92ce7309a9141b871e7071b78411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   m_healt: 100
   m_moveSpeed: 50
   m_attackDistance: 3
