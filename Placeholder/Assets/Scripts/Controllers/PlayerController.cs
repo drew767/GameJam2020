@@ -21,35 +21,17 @@ public class PlayerController : MonoBehaviour
     float maxSpeedGround = 20f;
 
     [SerializeField]
-    float maxForwardForceGround = 30000f;
-
-    [SerializeField]
-    float maxSideForceGround = 30000f;
+    float movementForceGround = 30000f;
 
     [SerializeField]
     float dragGround = 15f;
-
-    [SerializeField]
-    float jumpForceGround = 180f;
-
-    [SerializeField]
-    float dashForceGround = 180f;
 
     [Header("In the air")]
     [SerializeField]
     float maxSpeedAir = 5f;
 
     [SerializeField]
-    float maxForwardForceAir = 3000f;
-
-    [SerializeField]
-    float maxSideForceAir = 3000f;
-
-    [SerializeField]
-    float jumpForceAir = 50f;
-
-    [SerializeField]
-    float dashForceAir = 50f;
+    float movementForceAir = 3000f;
 
     [SerializeField]
     float dragAir = 0.1f;
@@ -68,16 +50,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     int jumpCharges = 2;
 
+    [SerializeField]
+    float jumpForce = 600f;
+
     [Header("Dashes")]
     [SerializeField]
-    float dashCooldown = 0.3f;
+    float dashCooldown = 0.6f;
+
+    [SerializeField]
+    float dashDuration = 0.3f;
+
+    [SerializeField]
+    float maxSpeedDash = 60f;
 
     [SerializeField]
     int dashCharges = 2;
 
-
     Timeout m_jumpTimeout;
     Timeout m_dashTimeout;
+    Timeout m_dashContinue;
 
     int m_jumpCharges = 2;
     int m_dashCharges = 2;
@@ -88,12 +79,11 @@ public class PlayerController : MonoBehaviour
     }
     bool m_isDead = false;
 
-    bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
-    public float movementForce { get { return isGrounded ? maxForwardForceGround : maxForwardForceAir; } }
+    public bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
+    public float movementForce { get { return isGrounded ? movementForceGround : movementForceAir; } }
     public float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
-    float drag { get { return isGrounded ? dragGround : dragAir; } }
-    float jumpForce { get { return TestJumpDistance() ? jumpForceGround : jumpForceAir; } }
-    float dashForce { get { return TestJumpDistance() ? dashForceGround : dashForceAir; } }
+    public float drag { get { return (isGrounded && !isDashing) ? dragGround : dragAir; } }
+    public bool isDashing { get { return !m_dashContinue.ExpiredOrNull(); } }
 
     bool? jumpTestResultCache;
     bool TestJumpDistance()
@@ -143,8 +133,9 @@ public class PlayerController : MonoBehaviour
     {
         Quaternion orientation = Quaternion.Euler(0f, m_camera.rotation.eulerAngles.y, 0f);
         Vector3 forceVector = orientation * MathHelper.FromVector2(forceDirection);
-        m_rigidbody.AddRelativeForce(forceVector * dashForce);
+        m_rigidbody.AddRelativeForce(forceVector * maxSpeedDash, ForceMode.VelocityChange);
         m_dashTimeout = new Timeout(dashCooldown);
+        m_dashContinue = new Timeout(dashDuration);
         m_dashCharges--;
     }
 
@@ -187,6 +178,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ClampSpeed()
+    {
+        Vector3 flatVelocity = MathHelper.FlatVector(m_rigidbody.velocity);
+        float maxSpeed = maxSpeedGround;
+        if (isDashing)
+        {
+            maxSpeed = maxSpeedDash;
+            m_rigidbody.velocity = MathHelper.FlatVector(m_rigidbody.velocity);
+        }
+        if(flatVelocity.magnitude > maxSpeed)
+        {
+            flatVelocity = flatVelocity.normalized * maxSpeed;
+        }
+        m_rigidbody.velocity = new Vector3(flatVelocity.x, m_rigidbody.velocity.y, flatVelocity.z);
+    }
+
     //  isGrounded is late for one FixedStep. So we'll skip one step
     bool m_jumpedRecently = false;
     bool m_dashedRecently = false;
@@ -209,8 +216,6 @@ public class PlayerController : MonoBehaviour
         }
         m_dashedRecently = false;
 
-
-
         if (inputState.jump && CanJump())
         {
             Jump();
@@ -224,6 +229,7 @@ public class PlayerController : MonoBehaviour
         }
 
         jumpTestResultCache = null;
+        ClampSpeed();
     }
 
     [Header("Player SOUNDS")]
