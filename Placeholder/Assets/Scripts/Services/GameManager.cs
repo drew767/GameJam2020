@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
     public void CheckEndgameCondition() 
     {
         m_gameIsFinished = player.GetIsDead();
+
+        if (m_gameIsFinished)
+        {
+            LayoutManager.GetInstance().PushLayout(ELayoutId.GameEndScreen);
+        }
     }
 
     public GameObject GetNewObject(ESpawnItemType type)
