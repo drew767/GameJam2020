@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Refractive
+  m_Name: Bullets
   m_Shader: {fileID: -6465566751694194690, guid: c5e846a067f8d5b479b0c56e3ebb08a7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,14 +20,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CameraOpaqueTexture:
-        m_Texture: {fileID: 2800000, guid: da0301cf3523e634aaa26d713b0b2dcc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 098581a8a020f934fb4f4deec9f52040, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_65CF77B7: 0.4
+    - Vector1_65CF77B7: 0.1
     - Vector1_B1B900F9: 1
-    - Vector1_B3026C3C: 15
-    - Vector1_C65DF36B: 54.54
+    - Vector1_B3026C3C: 4.8
+    - Vector1_C65DF36B: 200
     m_Colors:
-    - Color_B4C81CF6: {r: 0, g: 0.3137255, b: 11.984314, a: 0}
+    - Color_B4C81CF6: {r: 0.6211448, g: 4.5032997, b: 0.3105724, a: 0}
   m_BuildTextureStacks: []

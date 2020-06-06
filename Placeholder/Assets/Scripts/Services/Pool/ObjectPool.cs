@@ -98,7 +98,7 @@ public class ObjectPool : MonoBehaviour
             }
 
             newGO = instances[0];
-            newGO.SetActive(true);
+            //newGO.SetActive(true);
             instances.RemoveAt(0);
             IPooledObject pooledObject = newGO.GetComponent<IPooledObject>();
             pooledObject.OnSpawned();
