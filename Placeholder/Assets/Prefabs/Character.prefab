@@ -174,7 +174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252017813511974405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.84, z: 0}
+  m_LocalPosition: {x: 0, y: -0.983, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3252017813874404818}
@@ -240,7 +240,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3252017813511974402
 MonoBehaviour:
@@ -299,7 +299,7 @@ Rigidbody:
   m_GameObject: {fileID: 3252017813874404820}
   serializedVersion: 2
   m_Mass: 50
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -330,14 +330,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47663896c50f9c044883f9672390735a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_camera: {fileID: 3252017813264282529}
   m_neck: {fileID: 3252017812991931379}
   m_groundedTrigger: {fileID: 3252017813511974402}
-  maxForwardSpeed: 10
-  maxSideSpeed: 10
+  maxSpeed: 20
+  maxForwardSpeed: 10000
+  maxSideSpeed: 10000
+  maxForwardSpeedAir: 300
+  maxSideSpeedAir: 300
   horizontalSensitivity: 200
   verticalSensitivity: 200
-  jumpForce: 400
+  jumpForce: 120
+  drag: 10
 --- !u!1 &3252017814095791730
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CursorLock : MonoBehaviour
 {
-    private void LockCursor()
+    public static void Lock()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
     }
 
-    private void UnlockCursor()
+    public static void Unlock()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    private bool IsCursorLocked()
+    public static bool IsLocked()
     {
         return !Cursor.visible;
     }
@@ -26,13 +26,13 @@ public class CursorLock : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (IsCursorLocked())
+            if (IsLocked())
             {
-                UnlockCursor();
+                Unlock();
             }
             else
             {
-                LockCursor();
+                Lock();
             }
         }
     }
