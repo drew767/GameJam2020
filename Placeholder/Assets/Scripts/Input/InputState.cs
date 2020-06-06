@@ -17,6 +17,7 @@ public class InputState : MonoBehaviour
         public bool attack;
 
         public Vector2 summaryMouseDelta;
+        public long fixedUpdateCounter;
     }
 
 
@@ -59,12 +60,22 @@ public class InputState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fixedUpdatesCount != m_inputState.fixedUpdateCounter)
+            DropInputState();
 
         m_inputState.movementDirection = (GetInputTranslationDirection() + m_inputState.movementDirection).normalized;
         m_inputState.attack = m_inputState.attack || Input.GetMouseButtonDown(0);
-        m_inputState.jump = m_inputState.jump || Input.GetKey(KeyCode.Space);
+        m_inputState.jump = m_inputState.jump || Input.GetKeyDown(KeyCode.Space);
         var mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         m_inputState.summaryMouseDelta += mouseMovement * Time.deltaTime;
+        m_inputState.fixedUpdateCounter = fixedUpdatesCount;
         m_prevMousePosition = Input.mousePosition;
+    }
+
+    long fixedUpdatesCount = 0;
+
+    private void FixedUpdate()
+    {
+        ++fixedUpdatesCount;
     }
 }

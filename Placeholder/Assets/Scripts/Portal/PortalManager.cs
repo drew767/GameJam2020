@@ -54,7 +54,7 @@ public class PortalManager : MonoBehaviour
         {
             if (m_activatedSpawns[i] == null)
             {
-                Debug.LogError("Transform should not be NULL but if this end of the game it is Ok. LOL MOTHERFUCKER");
+                //Debug.LogError("Transform should not be NULL but if this end of the game it is Ok. LOL MOTHERFUCKER");
                 continue;
             }
 

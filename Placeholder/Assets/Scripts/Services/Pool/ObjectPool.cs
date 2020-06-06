@@ -7,8 +7,8 @@ using UnityEngine;
 public enum ESpawnItemType
 {
     Portal,
-    Enemy1,
-    Enemy2,
+    SlowEnemy,
+    SpeedEnemy,
     Enemy3,
     Enemy4,
     Enemy5,
