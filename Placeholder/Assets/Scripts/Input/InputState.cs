@@ -62,7 +62,7 @@ public class InputState : MonoBehaviour
 
         m_inputState.movementDirection = (GetInputTranslationDirection() + m_inputState.movementDirection).normalized;
         m_inputState.attack = m_inputState.attack || Input.GetMouseButtonDown(0);
-        m_inputState.jump = m_inputState.jump || Input.GetKey(KeyCode.Space);
+        m_inputState.jump = m_inputState.jump || Input.GetKeyDown(KeyCode.Space);
         var mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         m_inputState.summaryMouseDelta += mouseMovement * Time.deltaTime;
         m_prevMousePosition = Input.mousePosition;

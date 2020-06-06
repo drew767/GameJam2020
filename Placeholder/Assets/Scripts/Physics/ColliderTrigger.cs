@@ -6,7 +6,7 @@ public class ColliderTrigger : MonoBehaviour
 {
     public bool IsTriggered { get; private set; }
 
-    HashSet<Collider> m_touchedColliders = new HashSet<Collider>();
+    List<Collider> m_touchedColliders = new List<Collider>();
 
     private void OnTriggerEnter(Collider other)
     {

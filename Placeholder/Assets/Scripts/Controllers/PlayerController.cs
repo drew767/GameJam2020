@@ -11,9 +11,6 @@ public class PlayerController : MonoBehaviour
     InputState m_inputState;
 
     [SerializeField]
-    Collider m_collider;
-
-    [SerializeField]
     Transform m_camera;
 
     [SerializeField]
@@ -38,11 +35,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float jumpForceGround = 180f;
 
-    public bool GetIsDead()
-    {
-        return m_isDead;
-    }
-    bool m_isDead = false;
     [Header("In the air")]
     [SerializeField]
     float maxSpeedAir = 5f;
@@ -66,20 +58,42 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float verticalSensitivity = 200f;
 
+    public bool GetIsDead()
+    {
+        return m_isDead;
+    }
+    bool m_isDead = false;
+
     bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
     float movementForce { get { return isGrounded ? maxForwardForceGround : maxForwardForceAir; } }
     float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
     float drag { get { return isGrounded ? dragGround : dragAir; } }
-    float jumpForce { get { return isGrounded ? jumpForceGround : jumpForceAir; } }
+    float jumpForce { get { return TestJumpDistance() ? jumpForceGround : jumpForceAir; } }
     bool useGravity { get { return !isGrounded; } }
 
+    bool TestJumpDistance()
+    {
+        Ray downProbe = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+        float probeDistance = 3f;
+        Debug.DrawLine(downProbe.origin, downProbe.origin + downProbe.direction * probeDistance);
+        if (Physics.Raycast(downProbe, out hit, probeDistance, PhysicsLayers.MaskDefault))
+        {
+             return true;
+        }
+        return false;
+    }
+
+    bool CanJump()
+    {
+        return TestJumpDistance();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_inputState = GetComponent<InputState>();
-        Test();
     }
 
     // Update is called once per frame
@@ -102,39 +116,13 @@ public class PlayerController : MonoBehaviour
         return Mathf.Clamp( 1f - 0.5f * k * (1f + dot), -1, 1);
     }
 
-    void Test()
-    {
-        TestEqual(GetForce(1, 0), 1);
-        TestEqual(GetForce(0, 0), 1);
-        TestEqual(GetForce(-1, 0), 1);
-
-        TestEqual(GetForce(1, 1), 0);
-        TestEqual(GetForce(0, 1), 0.5f);
-        TestEqual(GetForce(-1, 1), 1);
-    }
-
-    void TestEqual(float a, float b)
-    {
-        if (a == b)
-            Debug.Log("Ok");
-        else
-            Debug.LogError("Fail on " + a + " " + b);
-    }
-
     Vector3 Direction2Dto3D(Vector2 forceDirection)
     {
-        Debug.Assert(forceDirection.sqrMagnitude <= 1f);
         Quaternion orientation = Quaternion.Euler(0f, m_neck.rotation.eulerAngles.y, 0f);
         Vector3 speedVector = flatVector(m_rigidbody.velocity);
         Vector3 forceVector = orientation * FromVector2(forceDirection);
         float speedScale = Mathf.Clamp01(speedVector.magnitude / maxSpeed);
         float forceScale = GetForce(Vector3.Dot(speedVector.normalized, forceVector), speedScale);
-        if(forceScale < 0f)
-        {
-            Debug.DrawLine(transform.position, transform.position + Vector3.up, Color.black, 0.1f);
-        }
-        Debug.DrawLine(transform.position, transform.position + speedVector, Color.green, 0.1f);
-        Debug.DrawLine(transform.position, transform.position + forceVector, Color.red, 0.1f);
         return forceVector * movementForce * forceScale;
     }
 
@@ -177,16 +165,14 @@ public class PlayerController : MonoBehaviour
     {
         var inputState = m_inputState.GetInputState();
         m_rigidbody.drag = drag;
-        m_rigidbody.useGravity = useGravity;
         UpdateMovement(inputState);
         UpdateRotation(inputState);
 
-        if (m_groundedTrigger.IsTriggered)
+        if (inputState.jump && CanJump())
         {
-            if (inputState.jump)
-            {
-                m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            }
+            m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            m_rigidbody.AddForce(new Vector3(0f, -m_rigidbody.velocity.y, 0f) * m_rigidbody.mass, ForceMode.Impulse);
+            m_rigidbody.drag = dragAir;
         }
 
         m_inputState.DropInputState();
