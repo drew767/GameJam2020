@@ -66,6 +66,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     int dashCharges = 2;
 
+    [Header("Other")]
+    [SerializeField]
+    int health = 100;
+
     Timeout m_jumpTimeout;
     Timeout m_dashTimeout;
     Timeout m_dashContinue;
@@ -75,13 +79,12 @@ public class PlayerController : MonoBehaviour
 
     public bool GetIsDead()
     {
-        return m_health > 0;
+        return health > 0;
     }
-    int m_health = 100;
 
     public void OnTakeDamage(int damage)
     {
-        m_health -= damage;
+        health -= damage;
     }
 
     public bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
