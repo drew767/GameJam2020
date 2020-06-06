@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 6626172223592852768}
   - component: {fileID: 6626172223585059522}
   m_Layer: 0
-  m_Name: FPS_Character_waterpistol
+  m_Name: FPS_Character_weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1481,7 +1481,7 @@ Animator:
   m_GameObject: {fileID: 6626172223592362240}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6ddd73cb948ddf44fa54e03aab3093a3, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 511f24fd060ef465da64edde8c05d690, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

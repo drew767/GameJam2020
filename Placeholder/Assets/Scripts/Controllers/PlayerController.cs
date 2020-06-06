@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
     public float drag { get { return (isGrounded && !isDashing) ? dragGround : dragAir; } }
     public bool isDashing { get { return !m_dashContinue.ExpiredOrNull(); } }
+    public float speed { get { return m_rigidbody.velocity.magnitude; } }
 
     bool? jumpTestResultCache;
     bool TestJumpDistance()

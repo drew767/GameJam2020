@@ -584,10 +584,12 @@ public class WeaponScript : MonoBehaviour {
 
 			reloading = handsAnimator.GetCurrentAnimatorStateInfo(0).IsName(reloadAnimationName);
 
-			handsAnimator.SetFloat("walkSpeed", pmS.movementForce);
+			handsAnimator.SetFloat("walkSpeed", pmS.speed);
 			handsAnimator.SetBool("aiming", Input.GetButton("Fire2"));
-			handsAnimator.SetInteger("maxSpeed", (int)pmS.maxSpeed);
-			if(Input.GetKeyDown(KeyCode.R) && pmS.maxSpeed < 5.0f && !reloading && !meeleAttack/* && !aiming*/){
+			int hackMaxSpeed = (int)Mathf.Round(pmS.speed / 10.0f);
+			handsAnimator.SetInteger("maxSpeed", hackMaxSpeed);
+			//handsAnimator.SetInteger("maxSpeed", pmS.maxSpeed);
+			if (Input.GetKeyDown(KeyCode.R) && hackMaxSpeed < 5.0f && !reloading && !meeleAttack/* && !aiming*/){
 				StartCoroutine("Reload_Animation");
 			}
 		}
@@ -595,7 +597,7 @@ public class WeaponScript : MonoBehaviour {
 	}
 
 	[Header("Animation names")]
-	public string reloadAnimationName = "Player_Reload";
-	public string aimingAnimationName = "Player_AImpose";
+	public string reloadAnimationName = "Character_Reload";
+	public string aimingAnimationName = "Character_AImpose";
 	public string meeleAnimationName = "Character_Malee";
 }
