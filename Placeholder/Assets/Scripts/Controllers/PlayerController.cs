@@ -55,10 +55,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dashes")]
     [SerializeField]
-    float dashCooldown = 0.6f;
+    float dashCooldown = 0.3f;
 
     [SerializeField]
-    float dashDuration = 0.3f;
+    float dashDuration = 0.1f;
 
     [SerializeField]
     float maxSpeedDash = 60f;
