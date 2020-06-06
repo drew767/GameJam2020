@@ -600,7 +600,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -863,6 +863,7 @@ MonoBehaviour:
   dashDuration: 0.3
   maxSpeedDash: 60
   dashCharges: 2
+  health: 100
   _jumpSound: {fileID: 1144695743903343277}
   _freakingZombiesSound: {fileID: 0}
   _hitSound: {fileID: 4628100076407870695}
@@ -914,8 +915,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGun: {fileID: 0}
   gunsIHave:
-  - WeaponWithSight_semi
+  - WeaponRifleWithSight_semi
+  - WeaponRifle_auto
   icons:
+  - {fileID: 2800000, guid: 89cb17ce6d76c46668922c09a46b97a2, type: 3}
   - {fileID: 2800000, guid: 89cb17ce6d76c46668922c09a46b97a2, type: 3}
   switchWeaponCooldown: 0
   selectionMenuStyle: 0
