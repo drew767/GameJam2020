@@ -915,8 +915,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGun: {fileID: 0}
   gunsIHave:
-  - WeaponRifleWithSight_semi
+  - WeaponWaterPistol
+  - WeaponWaterRifle
+  - WeaponWaterLauncher
   - WeaponRifle_auto
+  - WeaponRifleWithSight_semi
   icons:
   - {fileID: 2800000, guid: 89cb17ce6d76c46668922c09a46b97a2, type: 3}
   - {fileID: 2800000, guid: 89cb17ce6d76c46668922c09a46b97a2, type: 3}
