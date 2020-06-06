@@ -66,9 +66,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     int dashCharges = 2;
 
-    [SerializeField]
-    float dashForce = 500000f;
-
     Timeout m_jumpTimeout;
     Timeout m_dashTimeout;
     Timeout m_dashContinue;
@@ -82,11 +79,11 @@ public class PlayerController : MonoBehaviour
     }
     bool m_isDead = false;
 
-    bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
-    float movementForce { get { return isGrounded ? movementForceGround : movementForceAir; } }
-    float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
-    float drag { get { return (isGrounded && !isDashing) ? dragGround : dragAir; } }
-    bool isDashing { get { return !m_dashContinue.ExpiredOrNull(); } }
+    public bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
+    public float movementForce { get { return isGrounded ? movementForceGround : movementForceAir; } }
+    public float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
+    public float drag { get { return (isGrounded && !isDashing) ? dragGround : dragAir; } }
+    public bool isDashing { get { return !m_dashContinue.ExpiredOrNull(); } }
 
     bool? jumpTestResultCache;
     bool TestJumpDistance()
@@ -136,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         Quaternion orientation = Quaternion.Euler(0f, m_camera.rotation.eulerAngles.y, 0f);
         Vector3 forceVector = orientation * MathHelper.FromVector2(forceDirection);
-        m_rigidbody.AddRelativeForce(forceVector * dashForce);
+        m_rigidbody.AddRelativeForce(forceVector * maxSpeedDash, ForceMode.VelocityChange);
         m_dashTimeout = new Timeout(dashCooldown);
         m_dashContinue = new Timeout(dashDuration);
         m_dashCharges--;
@@ -230,8 +227,6 @@ public class PlayerController : MonoBehaviour
             Dash(inputState.movementDirection);
             m_dashedRecently = true;
         }
-
-        Debug.Log("Drag " + m_rigidbody.drag + " speed " + Mathf.Floor( MathHelper.FlatVector( m_rigidbody.velocity).magnitude));
 
         jumpTestResultCache = null;
         ClampSpeed();
