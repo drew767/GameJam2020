@@ -45,6 +45,11 @@ public class PortalManager : MonoBehaviour
 
     private void OnPortalDestroyed(object incomingEvent) 
     {
+        if (m_activatedSpawns != null && m_activatedSpawns.Count <= 0)
+        {
+            return;
+        }
+
         OnPortalDesstroyedEvent castedEvent = (OnPortalDesstroyedEvent)incomingEvent;
 
         int nearestIndex = 0;

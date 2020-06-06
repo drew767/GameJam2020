@@ -25,7 +25,6 @@ public class ObjectPool : MonoBehaviour
         {
             m_currentNumberOfInstances = 0;
             m_requestedNumberOfInstances = m_defaultReserv;
-            Debug.Log("PoolItem()");
         }
 
         public ESpawnItemType m_id;
@@ -64,11 +63,6 @@ public class ObjectPool : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < m_prefabs.Count; i++)
-        {
-            Debug.Log(m_prefabs[i].GetCurrentNumber() + " " + m_prefabs[i].GetRequestedNumber());
-        }
-
         for (int i = 0; i < m_prefabs.Count; i++)
         {
             List<GameObject> listOfTypedObjects = m_deactivated[m_prefabs[i].m_id];
