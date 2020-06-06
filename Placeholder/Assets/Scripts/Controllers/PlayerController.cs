@@ -165,8 +165,8 @@ public class PlayerController : MonoBehaviour
 
         if (inputState.jump && CanJump())
         {
+            m_rigidbody.velocity = MathHelper.FlatVector(m_rigidbody.velocity);
             m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            m_rigidbody.AddForce(new Vector3(0f, -m_rigidbody.velocity.y, 0f) * m_rigidbody.mass, ForceMode.Impulse);
             m_rigidbody.drag = dragAir;
             m_jumpTimeout = new Timeout(jumpCooldown);
         }
