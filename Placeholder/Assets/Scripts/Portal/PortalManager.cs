@@ -7,8 +7,6 @@ public class PortalManager : MonoBehaviour
     List<Transform> m_deactivatedSpawns;
     List<Transform> m_activatedSpawns;
 
-    public GameObject m_portalPrefab;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +17,6 @@ public class PortalManager : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             m_deactivatedSpawns.Add(transform.GetChild(i));
-            Debug.Log(transform.GetChild(i).localPosition + " " + transform.GetChild(i).position);
-
         }
 
         EventSystem.RegisterListener<OnPortalDesstroyedEvent>(OnPortalDestroyed);
@@ -40,7 +36,10 @@ public class PortalManager : MonoBehaviour
             m_activatedSpawns.Add(currentSpawn);
             m_deactivatedSpawns.Remove(currentSpawn);
 
-            Instantiate(m_portalPrefab, currentSpawn.position, Quaternion.identity);
+            GameObject portal = GameManager.GetInstance().GetNewObject(ESpawnItemType.Portal);
+            portal.SetActive(true);
+            portal.transform.position = currentSpawn.position;
+            portal.transform.rotation = Quaternion.identity;
         }
     }
 
@@ -53,6 +52,12 @@ public class PortalManager : MonoBehaviour
 
         for (int i = 0; i < m_activatedSpawns.Count; i++)
         {
+            if (m_activatedSpawns[i] == null)
+            {
+                Debug.LogError("Transform should not be NULL but if this end of the game it is Ok. LOL MOTHERFUCKER");
+                continue;
+            }
+
             float distance = Vector3.Distance(castedEvent.position, m_activatedSpawns[i].position);
 
             if (minimalDistance > distance)
@@ -62,7 +67,7 @@ public class PortalManager : MonoBehaviour
             }
         }
 
-        Transform destroyedSpawn = m_deactivatedSpawns[nearestIndex];
+        Transform destroyedSpawn = m_activatedSpawns[nearestIndex];
         m_deactivatedSpawns.Add(destroyedSpawn);
         m_activatedSpawns.Remove(destroyedSpawn);
     }

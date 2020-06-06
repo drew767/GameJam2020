@@ -17,8 +17,8 @@ public class LayoutMainMenu : MonoBehaviour, ILayoutItem
     }
     public void PlayGame()
     {
-        // for now we are just POPing current screen. but later we need to request GAME MANAGER START GAME
         LayoutManager.GetInstance().ClearLayoutStack();
         LayoutManager.GetInstance().PushLayout(ELayoutId.Hud);
+        GameManager.GetInstance().StartPlayingGame();
     }
 }

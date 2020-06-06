@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float jumpForce = 100f;
 
+    public bool GetIsDead()
+    {
+        return m_isDead;
+    }
+    bool m_isDead = false;
 
     class Timeout
     {

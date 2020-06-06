@@ -21,7 +21,7 @@ public class LayoutPauseMenu : MonoBehaviour, ILayoutItem
     }
     public void ContinueGame()
     {
-        // TODO UNPAUSE GAME
+        GameManager.GetInstance().ResumeGame();
         LayoutManager.GetInstance().PopLayout();
     }
 }
