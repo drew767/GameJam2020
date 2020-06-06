@@ -80,8 +80,13 @@ MonoBehaviour:
   m_spawnPickWillBeReachedAfterSecondsFromSpawn: 1000
   m_minMobsInSecond: 0.1
   m_maxMobsInSecond: 5
-  m_mobSlowChance: 50
-  m_mobSpeedChance: 50
+  m_spawnObjects:
+  - m_type: 1
+    m_weight: 50
+  - m_type: 2
+    m_weight: 50
+  - m_type: 3
+    m_weight: 50
 --- !u!1001 &1724784610581176216
 PrefabInstance:
   m_ObjectHideFlags: 0

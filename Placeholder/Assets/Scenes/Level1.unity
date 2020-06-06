@@ -741,7 +741,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111529215}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &111529217
 Camera:
   m_ObjectHideFlags: 0
@@ -6466,8 +6466,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7300193189156768704, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
+      propertyPath: m_prefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300193189156768704, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
       propertyPath: m_prefabs.Array.data[2].m_id
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300193189156768704, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
+      propertyPath: m_prefabs.Array.data[3].m_id
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300193189156768704, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
+      propertyPath: m_prefabs.Array.data[3].m_prefab
+      value: 
+      objectReference: {fileID: 1109091762081716210, guid: a20d2704017981b40883700bed2d6a6b, type: 3}
+    - target: {fileID: 7300193189156768704, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
+      propertyPath: m_prefabs.Array.data[3].m_defaultReserv
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300193189156768707, guid: 5c5e30bbe4df0ed4eb7deddff2f5a75e, type: 3}
       propertyPath: m_LocalPosition.x
