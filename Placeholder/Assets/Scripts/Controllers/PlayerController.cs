@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour
     bool m_isDead = false;
 
     bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
-    float movementForce { get { return isGrounded ? maxForwardForceGround : maxForwardForceAir; } }
-    float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
+    public float movementForce { get { return isGrounded ? maxForwardForceGround : maxForwardForceAir; } }
+    public float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
     float drag { get { return isGrounded ? dragGround : dragAir; } }
     float jumpForce { get { return TestJumpDistance() ? jumpForceGround : jumpForceAir; } }
     float dashForce { get { return TestJumpDistance() ? dashForceGround : dashForceAir; } }
