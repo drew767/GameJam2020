@@ -58,6 +58,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float verticalSensitivity = 200f;
 
+    [Header("Other")]
+    [SerializeField]
+    float jumpCooldown = 0.3f;
+
+    Timeout m_jumpTimeout;
+
     public bool GetIsDead()
     {
         return m_isDead;
@@ -69,24 +75,26 @@ public class PlayerController : MonoBehaviour
     float maxSpeed { get { return isGrounded ? maxSpeedGround : maxSpeedAir; } }
     float drag { get { return isGrounded ? dragGround : dragAir; } }
     float jumpForce { get { return TestJumpDistance() ? jumpForceGround : jumpForceAir; } }
-    bool useGravity { get { return !isGrounded; } }
 
+    bool? jumpTestResultCache;
     bool TestJumpDistance()
     {
+        if (jumpTestResultCache.HasValue)
+            return jumpTestResultCache.Value;
         Ray downProbe = new Ray(transform.position, Vector3.down);
         RaycastHit hit;
         float probeDistance = 3f;
-        Debug.DrawLine(downProbe.origin, downProbe.origin + downProbe.direction * probeDistance);
-        if (Physics.Raycast(downProbe, out hit, probeDistance, PhysicsLayers.MaskDefault))
+        jumpTestResultCache = false;
+        if (Physics.SphereCast(downProbe, 0.5f, out hit, probeDistance, PhysicsLayers.MaskDefault))
         {
-             return true;
+            jumpTestResultCache = true;
         }
-        return false;
+        return jumpTestResultCache.Value;
     }
 
     bool CanJump()
     {
-        return TestJumpDistance();
+        return m_jumpTimeout.ExpiredOrNull() && TestJumpDistance();
     }
 
     // Start is called before the first frame update
@@ -101,28 +109,20 @@ public class PlayerController : MonoBehaviour
     {
     }
 
-    static Vector3 flatVector(Vector3 v)
-    {
-        return new Vector3(v.x, 0f, v.z);
-    }
 
-    static Vector3 FromVector2(Vector2 v)
-    {
-        return new Vector3(v.x, 0f, v.y);
-    }
 
-    float GetForce(float dot, float k)
+    float GetForceScaler(float dot, float k)
     {
-        return Mathf.Clamp( 1f - 0.5f * k * (1f + dot), -1, 1);
+        return Mathf.Clamp( 1f - k * (1f + dot) / 2f, -1, 1);
     }
 
     Vector3 Direction2Dto3D(Vector2 forceDirection)
     {
         Quaternion orientation = Quaternion.Euler(0f, m_neck.rotation.eulerAngles.y, 0f);
-        Vector3 speedVector = flatVector(m_rigidbody.velocity);
-        Vector3 forceVector = orientation * FromVector2(forceDirection);
+        Vector3 speedVector = MathHelper.FlatVector(m_rigidbody.velocity);
+        Vector3 forceVector = orientation * MathHelper.FromVector2(forceDirection);
         float speedScale = Mathf.Clamp01(speedVector.magnitude / maxSpeed);
-        float forceScale = GetForce(Vector3.Dot(speedVector.normalized, forceVector), speedScale);
+        float forceScale = GetForceScaler(Vector3.Dot(speedVector.normalized, forceVector), speedScale);
         return forceVector * movementForce * forceScale;
     }
 
@@ -131,18 +131,16 @@ public class PlayerController : MonoBehaviour
         return Quaternion.Euler(new Vector3(-delta.y * verticalSensitivity, delta.x * horizontalSensitivity, 0f));
     }
 
-    static float SnapAngle180(float angle)
-    {
-        while (angle < -180f)
-            angle += 360;
-        while (angle > 180f)
-            angle -= 360;
-        return angle;
-    }
-
     private void UpdateMovement(InputState.CharacterInputState inputState)
     {
         m_rigidbody.AddForce(Direction2Dto3D(inputState.movementDirection));
+    }
+
+    float GetNewPitch(Quaternion rotationDelta)
+    {
+        float pitch = MathHelper.SnapAngle180(m_camera.localRotation.eulerAngles.x);
+        pitch = MathHelper.SnapAngle180(pitch + rotationDelta.eulerAngles.x);
+        return Mathf.Clamp(pitch, -70, 70);
     }
 
     private void UpdateRotation(InputState.CharacterInputState inputState)
@@ -150,10 +148,7 @@ public class PlayerController : MonoBehaviour
         Quaternion rotationDelta = CursorDeltaToRotation(inputState.summaryMouseDelta);
         if (rotationDelta.eulerAngles.sqrMagnitude != 0f)
         {
-            float pitch = SnapAngle180(m_camera.localRotation.eulerAngles.x);
-            pitch = SnapAngle180(pitch + rotationDelta.eulerAngles.x);
-            pitch = Mathf.Clamp(pitch, -70, 70);
-            m_camera.localRotation = Quaternion.Euler(new Vector3(pitch, 0f, 0f));
+            m_camera.localRotation = Quaternion.Euler(new Vector3(GetNewPitch(rotationDelta), 0f, 0f));
             m_camera.Rotate(m_camera.right, rotationDelta.eulerAngles.x, Space.World);
             m_neck.Rotate(Vector3.up, rotationDelta.eulerAngles.y);
         }
@@ -173,8 +168,9 @@ public class PlayerController : MonoBehaviour
             m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             m_rigidbody.AddForce(new Vector3(0f, -m_rigidbody.velocity.y, 0f) * m_rigidbody.mass, ForceMode.Impulse);
             m_rigidbody.drag = dragAir;
+            m_jumpTimeout = new Timeout(jumpCooldown);
         }
 
-        m_inputState.DropInputState();
+        jumpTestResultCache = null;
     }
 }

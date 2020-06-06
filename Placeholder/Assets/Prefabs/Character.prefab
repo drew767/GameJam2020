@@ -337,7 +337,7 @@ MonoBehaviour:
   maxForwardForceGround: 30000
   maxSideForceGround: 30000
   dragGround: 15
-  jumpForceGround: 800
+  jumpForceGround: 400
   maxSpeedAir: 5
   maxForwardForceAir: 3000
   maxSideForceAir: 3000
@@ -345,6 +345,7 @@ MonoBehaviour:
   dragAir: 0.1
   horizontalSensitivity: 200
   verticalSensitivity: 200
+  jumpCooldown: 0.3
 --- !u!1 &3252017814095791730
 GameObject:
   m_ObjectHideFlags: 0
