@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public enum EPickupType
+{
+    Ammo,
+    Shields,
+    Health
+}
+
 public class BulletPickup : MonoBehaviour
 {
     [SerializeField]
@@ -10,6 +19,8 @@ public class BulletPickup : MonoBehaviour
     float m_pickupDistance = 1.0f;
     [SerializeField]
     float m_attractionDistance = 10.0f;
+    [SerializeField]
+    EPickupType m_pickupType = EPickupType.Ammo;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +38,7 @@ public class BulletPickup : MonoBehaviour
         Vector3 distance = player.transform.position - transform.position;
         if (distance.magnitude < m_pickupDistance)
         {
-            SendMessage("BulletPickup", player, SendMessageOptions.DontRequireReceiver);
+            player.gameObject.SendMessage("OnPickup", this, SendMessageOptions.DontRequireReceiver);
             Destroy(this.gameObject);
         }
         else if (distance.magnitude < m_attractionDistance)
