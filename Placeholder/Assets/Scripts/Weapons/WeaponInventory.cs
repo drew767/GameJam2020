@@ -116,6 +116,24 @@ public class WeaponInventory : MonoBehaviour {
 			currentGunCounter = 1;
 			StartCoroutine("Spawn",currentGunCounter);
 		}
+		if (Input.GetKeyDown(KeyCode.Alpha3) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 2;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha4) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 3;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha5) && currentGunCounter != 1)
+		{
+			switchWeaponCooldown = 0;
+			currentGunCounter = 4;
+			StartCoroutine("Spawn", currentGunCounter);
+		}
 
 	}
 

@@ -90,7 +90,7 @@ MonoBehaviour:
   cameraZoomRatio_notAiming: 60
   cameraZoomRatio_aiming: 40
   secondCameraZoomRatio_notAiming: 60
-  secondCameraZoomRatio_aiming: 55
+  secondCameraZoomRatio_aiming: 50
   gunPrecision: 0
   shoot_sound_source: {fileID: 8263354}
   reloadSound_source: {fileID: 8203074}
@@ -105,12 +105,12 @@ MonoBehaviour:
   HUD_bullets: {fileID: 0}
   horizontal_crosshair: {fileID: 2800000, guid: e1aa4c90445944348a112c3b7fa4b318, type: 3}
   vertical_crosshair: {fileID: 2800000, guid: 3f8b669e9880644cbb903f67bbc9f824, type: 3}
-  top_pos_crosshair: {x: -2.7, y: -20.8}
-  bottom_pos_crosshair: {x: -2.7, y: -7.61}
-  left_pos_crosshair: {x: -14, y: -5}
-  right_pos_crosshair: {x: -5.5, y: -5}
-  size_crosshair_vertical: {x: 6, y: 28}
-  size_crosshair_horizontal: {x: 20, y: 10}
+  top_pos_crosshair: {x: 0, y: 0}
+  bottom_pos_crosshair: {x: 0, y: 0}
+  left_pos_crosshair: {x: 0, y: 0}
+  right_pos_crosshair: {x: 0, y: 0}
+  size_crosshair_vertical: {x: 1, y: 1}
+  size_crosshair_horizontal: {x: 1, y: 1}
   expandValues_crosshair: {x: 0, y: 0}
   handsAnimator: {fileID: 2135966500212327479}
   reloadAnimationName: Player_Reload

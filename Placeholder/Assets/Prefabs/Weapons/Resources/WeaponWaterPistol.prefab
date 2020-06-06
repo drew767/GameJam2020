@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1380834a03702fc4ab6a73ccbce64b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStyle: 1
+  currentStyle: 0
   mls: {fileID: 0}
   walkingSpeed: 3
   runningSpeed: 5
-  bulletsIHave: 200
-  bulletsInTheGun: 30
-  amountOfBulletsPerLoad: 30
+  bulletsIHave: 9999
+  bulletsInTheGun: 12
+  amountOfBulletsPerLoad: 12
   currentGunPosition: {x: 0, y: 0, z: 0}
   restPlacePosition: {x: -0.07, y: -0.06, z: 0.4}
   aimPlacePosition: {x: 0, y: -0.03, z: 0.3}
@@ -69,7 +69,7 @@ MonoBehaviour:
   forwardRotationAmount: {x: 1, y: 1}
   bulletSpawnPlace: {fileID: 3849275942093782068}
   bullet: {fileID: 128836, guid: 94a45112080934f49ab5ba060439ceb0, type: 3}
-  roundsPerSecond: 10
+  roundsPerSecond: 50
   recoilAmount_z: 0.5
   recoilAmount_x: 0.5
   recoilAmount_y: 0.5
@@ -85,8 +85,8 @@ MonoBehaviour:
   recoilOverTime_z: 0.1
   recoilOverTime_x: 0.1
   recoilOverTime_y: 0.1
-  gunPrecision_notAiming: 150
-  gunPrecision_aiming: 70
+  gunPrecision_notAiming: 50
+  gunPrecision_aiming: 10
   cameraZoomRatio_notAiming: 60
   cameraZoomRatio_aiming: 40
   secondCameraZoomRatio_notAiming: 60
@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 199458, guid: 29d86feb88bf925428f9d7de6d4b401f, type: 3}
   - {fileID: 199458, guid: 4aa4c63f0f9d6a84dbaeed6b9caeca80, type: 3}
   muzzelSpawn: {fileID: 3849275942093782068}
-  reloadChangeBulletsTime: -1.5
+  reloadChangeBulletsTime: -1
   HUD_bullets: {fileID: 0}
   horizontal_crosshair: {fileID: 2800000, guid: e1aa4c90445944348a112c3b7fa4b318, type: 3}
   vertical_crosshair: {fileID: 2800000, guid: 3f8b669e9880644cbb903f67bbc9f824, type: 3}
