@@ -75,9 +75,14 @@ public class PlayerController : MonoBehaviour
 
     public bool GetIsDead()
     {
-        return m_isDead;
+        return m_health > 0;
     }
-    bool m_isDead = false;
+    int m_health = 100;
+
+    public void OnTakeDamage(int damage)
+    {
+        m_health -= damage;
+    }
 
     public bool isGrounded { get { return m_groundedTrigger.IsTriggered; } }
     public float movementForce { get { return isGrounded ? movementForceGround : movementForceAir; } }

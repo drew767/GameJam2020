@@ -34,7 +34,7 @@ Transform:
   - {fileID: 2899069576424907111}
   - {fileID: 7614562480753427438}
   m_Father: {fileID: 3252017813874404818}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546025880961630916
 GameObject:
@@ -575,7 +575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3252017813874404818}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3252017813264282556
 Camera:
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 3252017813511974402}
   m_Layer: 9
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,7 +691,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3252017813874404818}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3252017813511974401
 MeshFilter:
@@ -781,7 +781,8 @@ GameObject:
   - component: {fileID: 3252017813874404817}
   - component: {fileID: 8003035153983032951}
   - component: {fileID: 1582379683}
-  m_Layer: 0
+  - component: {fileID: 6594576709541933595}
+  m_Layer: 10
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -799,7 +800,6 @@ Transform:
   m_LocalPosition: {x: 54.02, y: 5.9, z: -37.08021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3252017814095791731}
   - {fileID: 3252017813511974430}
   - {fileID: 3252017813264282529}
   - {fileID: 6355483211224863561}
@@ -849,22 +849,19 @@ MonoBehaviour:
   m_camera: {fileID: 3252017813264282529}
   m_groundedTrigger: {fileID: 3252017813511974402}
   maxSpeedGround: 20
-  maxForwardForceGround: 30000
-  maxSideForceGround: 30000
+  movementForceGround: 30000
   dragGround: 15
-  jumpForceGround: 600
-  dashForceGround: 180
   maxSpeedAir: 5
-  maxForwardForceAir: 3000
-  maxSideForceAir: 3000
-  jumpForceAir: 500
-  dashForceAir: 50
+  movementForceAir: 3000
   dragAir: 0.1
   horizontalSensitivity: 200
   verticalSensitivity: 200
   jumpCooldown: 0.3
   jumpCharges: 2
+  jumpForce: 600
   dashCooldown: 0.3
+  dashDuration: 0.3
+  maxSpeedDash: 60
   dashCharges: 2
   _jumpSound: {fileID: 1144695743903343277}
   _freakingZombiesSound: {fileID: 0}
@@ -926,53 +923,13 @@ MonoBehaviour:
   beginPosition: {x: 40, y: 4}
   size: {x: 10, y: 12}
   weaponChanging: {fileID: 9120280408733348605}
---- !u!1 &3252017814095791730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3252017814095791731}
-  - component: {fileID: 3252017814095791729}
-  - component: {fileID: 3252017814095791728}
-  m_Layer: 10
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3252017814095791731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252017814095791730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3252017813874404818}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3252017814095791729
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252017814095791730}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &3252017814095791728
+--- !u!136 &6594576709541933595
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252017814095791730}
+  m_GameObject: {fileID: 3252017813874404820}
   m_Material: {fileID: 13400000, guid: 3278f310adfb9e747873edffad75f28b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
