@@ -58,6 +58,8 @@ public class EnemyController : MonoBehaviour
 	Vector3 m_attackTarget = Vector3.zero;
 	NavMeshAgent m_navMeshAgent = null;
 
+	bool UsingNavMesh { get { return m_navMeshAgent && m_navMeshAgent.isOnNavMesh; } }
+
 	void Start()
     {
 		m_rb = GetComponent<Rigidbody>();
@@ -158,7 +160,7 @@ public class EnemyController : MonoBehaviour
 			}
 
 			m_moveTarget = Vector3.zero;
-			if(m_navMeshAgent && m_navMeshAgent.isOnNavMesh)
+			if(UsingNavMesh)
 			{
 				m_navMeshAgent.destination = transform.position;
 			}
@@ -170,7 +172,14 @@ public class EnemyController : MonoBehaviour
 
 		if(m_attackTarget != Vector3.zero)
 		{
-			transform.LookAt(new Vector3(m_attackTarget.x, transform.position.y, m_attackTarget.z));
+			if(UsingNavMesh)
+			{
+				transform.LookAt(new Vector3(m_navMeshAgent.steeringTarget.x, transform.position.y, m_navMeshAgent.steeringTarget.z));
+			}
+			else
+			{
+				transform.LookAt(new Vector3(m_attackTarget.x, transform.position.y, m_attackTarget.z));
+			}
 		}
 	}
 
@@ -184,17 +193,18 @@ public class EnemyController : MonoBehaviour
 
 	protected virtual void UpdateMove()
 	{
-		if(m_navMeshAgent != null && m_navMeshAgent.isOnNavMesh)
+		if(UsingNavMesh)
 		{
 			m_navMeshAgent.destination = m_moveTarget;
+			UnityEngine.Debug.DrawLine(transform.position, m_navMeshAgent.steeringTarget, Color.red);
 		}
 		else
 		{
 			Vector3 direction = (m_moveTarget - transform.position).normalized;
 			direction = new Vector3(direction.x, 0.0f, direction.z);
 			m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
+			UnityEngine.Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 		}
-		UnityEngine.Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 	}
 
 	protected virtual void UpdateAttack()
