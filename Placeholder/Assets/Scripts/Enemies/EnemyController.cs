@@ -86,6 +86,11 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 	void Update()
     {
+		if (m_state == eState.DEAD)
+		{
+			return;
+		}
+
 		if (m_navMeshAgent && !m_navMeshAgent.enabled)
 		{
 			m_navMeshAgent.enabled = true;
@@ -263,16 +268,28 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 	public void TakeDamage(int damage)
 	{
+		if(State == eState.DEAD)
+		{
+			return;
+		}	
+
 		m_healt -= damage;
 		if(m_healt <= 0)
 		{
-			State = eState.DEAD;
 			StartCoroutine(DestroyObject());
 		}
 	}
 
 	IEnumerator DestroyObject()
 	{
+		State = eState.DEAD;
+		//GetComponent<CapsuleCollider>().enabled = false;
+		m_rb.velocity = Vector3.zero;
+		if(m_navMeshAgent)
+		{
+			m_navMeshAgent.Stop();
+		}
+
 		yield return new WaitForSeconds(3.0f);
 		GameObject.Destroy(this.gameObject);
 	}
