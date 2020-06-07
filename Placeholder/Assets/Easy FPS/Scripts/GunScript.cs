@@ -18,13 +18,19 @@ public class GunScript : MonoBehaviour {
 	public int runningSpeed = 5;
 
 
-	[Header("Bullet properties")]
-	[Tooltip("Preset value to tell with how many bullets will our waepon spawn aside.")]
-	public float bulletsIHave = 20;
-	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
-	public float bulletsInTheGun = 5;
-	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
-	public float amountOfBulletsPerLoad = 5;
+	//[Header("Bullet properties")]
+	//[Tooltip("Preset value to tell with how many bullets will our waepon spawn aside.")]
+	//public float bulletsIHave = 20;
+	//[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
+	//public float bulletsInTheGun = 5;
+	//[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
+	//public float amountOfBulletsPerLoad = 5;
+
+	GunInventory m_inventory;
+	public void SetGunInventory(GunInventory gunInventory)
+	{
+		m_inventory = gunInventory;
+	}
 
 	private Transform player;
 	private Camera cameraComponent;
@@ -420,7 +426,7 @@ public class GunScript : MonoBehaviour {
 	private void ShootMethod(){
 		if(waitTillNextFire <= 0 && !reloading && pmS.maxSpeed < 5){
 
-			if(bulletsInTheGun > 0){
+			if(m_inventory.bulletsInTheGun > 0){
 
 				int randomNumberForMuzzelFlash = Random.Range(0,5);
 				if (bullet)
@@ -437,7 +443,7 @@ public class GunScript : MonoBehaviour {
 				RecoilMath();
 
 				waitTillNextFire = 1;
-				bulletsInTheGun -= 1;
+				m_inventory.bulletsInTheGun -= 1;
 			}
 				
 			else{
@@ -461,7 +467,7 @@ public class GunScript : MonoBehaviour {
 	[Tooltip("Time that passes after reloading. Depends on your reload animation length, because reloading can be interrupted via meele attack or running. So any action before this finishes will interrupt reloading.")]
 	public float reloadChangeBulletsTime;
 	IEnumerator Reload_Animation(){
-		if(bulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
+		if(m_inventory.bulletsIHave > 0 && m_inventory.bulletsInTheGun < m_inventory.amountOfBulletsPerLoad && !reloading/* && !aiming*/){
 
 			if (reloadSound_source.isPlaying == false && reloadSound_source != null) {
 				if (reloadSound_source)
@@ -485,17 +491,17 @@ public class GunScript : MonoBehaviour {
 				else
 					print ("Missing Freaking Zombies Sound");
 				
-				if (bulletsIHave - amountOfBulletsPerLoad >= 0) {
-					bulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
-					bulletsInTheGun = amountOfBulletsPerLoad;
-				} else if (bulletsIHave - amountOfBulletsPerLoad < 0) {
-					float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
-					if (bulletsIHave - valueForBoth < 0) {
-						bulletsInTheGun += bulletsIHave;
-						bulletsIHave = 0;
+				if (m_inventory.bulletsIHave - m_inventory.amountOfBulletsPerLoad >= 0) {
+					m_inventory.bulletsIHave -= m_inventory.amountOfBulletsPerLoad - m_inventory.bulletsInTheGun;
+					m_inventory.bulletsInTheGun = m_inventory.amountOfBulletsPerLoad;
+				} else if (m_inventory.bulletsIHave - m_inventory.amountOfBulletsPerLoad < 0) {
+					float valueForBoth = m_inventory.amountOfBulletsPerLoad - m_inventory.bulletsInTheGun;
+					if (m_inventory.bulletsIHave - valueForBoth < 0) {
+						m_inventory.bulletsInTheGun += m_inventory.bulletsIHave;
+						m_inventory.bulletsIHave = 0;
 					} else {
-						bulletsIHave -= valueForBoth;
-						bulletsInTheGun += valueForBoth;
+						m_inventory.bulletsIHave -= valueForBoth;
+						m_inventory.bulletsInTheGun += valueForBoth;
 					}
 				}
 			} else {
@@ -523,7 +529,7 @@ public class GunScript : MonoBehaviour {
 			}
 		}
 		if(mls && HUD_bullets)
-			HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+			HUD_bullets.text = m_inventory.bulletsIHave.ToString() + " - " + m_inventory.bulletsInTheGun.ToString();
 
 		DrawCrosshair();
 	}

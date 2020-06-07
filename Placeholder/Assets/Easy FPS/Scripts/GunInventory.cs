@@ -8,7 +8,6 @@ public enum MenuStyle{
 
 public class GunInventory : MonoBehaviour {
 	[Tooltip("Current weapon gameObject.")]
-	public GameObject currentGun;
 	private Animator currentHAndsAnimator;
 	private int currentGunCounter = 0;
 
@@ -55,6 +54,11 @@ public class GunInventory : MonoBehaviour {
 
 	}
 
+	public GameObject currentGun;
+	public GunScript currentGunScript;
+	public float bulletsIHave = 35;
+    public float bulletsInTheGun = 11;
+	public float amountOfBulletsPerLoad = 11;
 
 	/*
 	 * Grabing the icons from the Resources/Weapo_Icons/ -> gun name of the image.
@@ -137,6 +141,8 @@ public class GunInventory : MonoBehaviour {
 
 				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+				currentGunScript = currentGun.GetComponent<GunScript>();
+				currentGunScript.SetGunInventory(this);
 				AssignHandsAnimator(currentGun);
 			}
 			else if(currentGun.name.Contains("Sword")){
@@ -150,14 +156,19 @@ public class GunInventory : MonoBehaviour {
 
 				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
-				AssignHandsAnimator(currentGun);
+                currentGunScript = currentGun.GetComponent<GunScript>();
+                currentGunScript.SetGunInventory(this);
+
+                AssignHandsAnimator(currentGun);
 			}
 		}
 		else{
 			GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 			currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+            currentGunScript = currentGun.GetComponent<GunScript>();
+            currentGunScript.SetGunInventory(this);
 
-			AssignHandsAnimator(currentGun);
+            AssignHandsAnimator(currentGun);
 		}
 
 

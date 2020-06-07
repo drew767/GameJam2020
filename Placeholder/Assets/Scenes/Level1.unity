@@ -1671,6 +1671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1582379683, guid: 45081335b78804a478fa5afacca0b50a, type: 3}
+      propertyPath: weaponBulletsIHave
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 3252017813874404818, guid: 45081335b78804a478fa5afacca0b50a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.98

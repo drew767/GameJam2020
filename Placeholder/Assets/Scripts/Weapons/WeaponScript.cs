@@ -17,14 +17,14 @@ public class WeaponScript : MonoBehaviour {
 	[Tooltip("Speed is determined via gun because not every gun has same properties or weights so you MUST set up your speeds here")]
 	public int runningSpeed = 5;
 
-
-	[Header("Bullet properties")]
-	[Tooltip("Preset value to tell with how many bullets will our waepon spawn aside.")]
-	public float bulletsIHave = 20;
-	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
-	public float bulletsInTheGun = 5;
-	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
-	public float amountOfBulletsPerLoad = 5;
+	public float GetBylletsInTheGun()
+	{
+		float tmp = bulletsInTheGun;
+		bulletsInTheGun = 0;
+		return tmp;
+	}
+	float bulletsInTheGun = 0;
+	public float amountOfBulletsPerLoad = 0;
 
 	private Transform player;
 	private Camera cameraComponent;
@@ -56,8 +56,14 @@ public class WeaponScript : MonoBehaviour {
 
 	}
 
+	WeaponInventory m_inventory;
+    public void SetWeaponInventory(WeaponInventory weaponInventory)
+    {
+        m_inventory = weaponInventory;
+    }
 
-	[HideInInspector]
+
+    [HideInInspector]
 	public Vector3 currentGunPosition;
 	[Header("Gun Positioning")]
 	[Tooltip("Vector 3 position from player SETUP for NON AIMING values")]
@@ -454,7 +460,28 @@ public class WeaponScript : MonoBehaviour {
 	}
 
 
-
+	public void SilentReload()
+	{
+        if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad >= 0)
+        {
+            m_inventory.weaponBulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
+            bulletsInTheGun = amountOfBulletsPerLoad;
+        }
+        else if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad < 0)
+        {
+            float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
+            if (m_inventory.weaponBulletsIHave - valueForBoth < 0)
+            {
+                bulletsInTheGun += m_inventory.weaponBulletsIHave;
+                m_inventory.weaponBulletsIHave = 0;
+            }
+            else
+            {
+                m_inventory.weaponBulletsIHave -= valueForBoth;
+                bulletsInTheGun += valueForBoth;
+            }
+        }
+    }
 	/*
 	* Reloading, setting the reloading to animator,
 	* Waiting for 2 seconds and then seeting the reloaded clip.
@@ -462,10 +489,12 @@ public class WeaponScript : MonoBehaviour {
 	[Header("reload time after anima")]
 	[Tooltip("Time that passes after reloading. Depends on your reload animation length, because reloading can be interrupted via meele attack or running. So any action before this finishes will interrupt reloading.")]
 	public float reloadChangeBulletsTime;
-	IEnumerator Reload_Animation(){
-		if(bulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
+	IEnumerator Reload_Animation()
+	{
+		if(m_inventory.weaponBulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
 
-			if (reloadSound_source.isPlaying == false && reloadSound_source != null) {
+			if (reloadSound_source.isPlaying == false && reloadSound_source != null) 
+			{
 				if (reloadSound_source)
 					reloadSound_source.Play ();
 				else
@@ -487,16 +516,22 @@ public class WeaponScript : MonoBehaviour {
 				else
 					print ("Missing Freaking Zombies Sound");
 				
-				if (bulletsIHave - amountOfBulletsPerLoad >= 0) {
-					bulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
+				if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad >= 0) 
+				{
+					m_inventory.weaponBulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
 					bulletsInTheGun = amountOfBulletsPerLoad;
-				} else if (bulletsIHave - amountOfBulletsPerLoad < 0) {
+				} 
+				else if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad < 0) 
+				{
 					float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
-					if (bulletsIHave - valueForBoth < 0) {
-						bulletsInTheGun += bulletsIHave;
-						bulletsIHave = 0;
-					} else {
-						bulletsIHave -= valueForBoth;
+					if (m_inventory.weaponBulletsIHave - valueForBoth < 0)
+					{
+						bulletsInTheGun += m_inventory.weaponBulletsIHave;
+						m_inventory.weaponBulletsIHave = 0;
+					} 
+					else 
+					{
+						m_inventory.weaponBulletsIHave -= valueForBoth;
 						bulletsInTheGun += valueForBoth;
 					}
 				}
@@ -526,7 +561,7 @@ public class WeaponScript : MonoBehaviour {
 		//		}
 		//	}
 		//	if(mls && HUD_bullets)
-		//		HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+		//		HUD_bullets.text = weaponBulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
 
 		//	DrawCrosshair();
 	}
