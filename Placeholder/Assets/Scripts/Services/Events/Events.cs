@@ -7,7 +7,7 @@
 //EventSystem.RegisterListener<PauseMenuActivated>(OnPauseRequested);
 // Event calls
 //private void OnPauseRequested(object incomingEvent) {}
-//EventSystem.SendEvent(new PauseMenuActivated() { });
+//EventSystem.SendEvent(new MobDied() { });
 
 class OnPortalDesstroyedEvent
 {
@@ -19,5 +19,9 @@ class OnPortalBeginTrigger
     public PortalTrigger portalTrigger = null;
 }
 class OnPortalEndTrigger
+{
+}
+
+class MobDied
 {
 }

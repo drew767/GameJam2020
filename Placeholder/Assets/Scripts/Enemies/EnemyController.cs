@@ -12,7 +12,8 @@ public class EnemyController : MonoBehaviour, IPooledObject
     }
     public void OnDestroy()
     {
-    }
+		EventSystem.SendEvent(new MobDied() { });
+	}
     public ESpawnItemType GetObjectType() { return type; }
 	#endregion
 

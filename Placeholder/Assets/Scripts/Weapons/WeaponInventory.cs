@@ -161,7 +161,7 @@ public class WeaponInventory : MonoBehaviour {
 
                 if (currentGunScript)
                 {
-                    weaponBulletsIHave += currentGunScript.GetBylletsInTheGun();
+                    weaponBulletsIHave += currentGunScript.GetBylletsFromTheGun();
                 }
                 Destroy(currentGun);
 
@@ -192,7 +192,7 @@ public class WeaponInventory : MonoBehaviour {
 			currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
             if (currentGunScript)
             {
-                weaponBulletsIHave += currentGunScript.GetBylletsInTheGun();
+                weaponBulletsIHave += currentGunScript.GetBylletsFromTheGun();
             }
             currentGunScript = currentGun.GetComponent<WeaponScript>();
             currentGunScript.SetWeaponInventory(this);
@@ -220,11 +220,11 @@ public class WeaponInventory : MonoBehaviour {
 	 */
 	void OnGUI(){
 
-		if(currentGun){
-			for(int i = 0; i < gunsIHave.Count; i++){
-				DrawCorrespondingImage(i);
-			}
-		}
+		//if(currentGun){
+		//	for(int i = 0; i < gunsIHave.Count; i++){
+		//		DrawCorrespondingImage(i);
+		//	}
+		//}
 
 	}
 
