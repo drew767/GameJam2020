@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class EnemySoundController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    AudioClip m_step = null;
+    [SerializeField]
+    AudioClip m_attack = null;
+    [SerializeField]
+    AudioClip m_dead = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	AudioSource m_audioSource = null;
+
+	void Start()
+	{
+		m_audioSource = GetComponent<AudioSource>();
+	}
+
+	void OnStateChanged(EnemyController enemy)
+	{
+		//if(enemy.State == EnemyController.eState.MOVE)
+		//{
+		//	m_audioSource.PlayOneShot(m_dead);
+		//}
+
+		if (enemy.State == EnemyController.eState.DEAD)
+		{
+			m_audioSource.PlayOneShot(m_dead);
+		}
+	}
+
+	void OnAttack()
+	{
+		m_audioSource.PlayOneShot(m_attack);
+	}
 }

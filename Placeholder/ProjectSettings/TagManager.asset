@@ -24,7 +24,7 @@ TagManager:
   - IgnorePlayerCollider
   - PlayerCollider
   - Portal
-  - 
+  - EnemyCollider
   - 
   - 
   - 
