@@ -27,7 +27,10 @@ public class Pickup : MonoBehaviour
     {
         m_timeSincePickUp = 0.0f;
         gameObject.SetActive(false);
-        other.gameObject.GetComponent<PlayerController>().AddBonus(m_pickupType);
+        if(other.gameObject.tag.Equals("Player"))
+		{
+            other.gameObject.GetComponent<PlayerController>().AddBonus(m_pickupType);
+        }
     }
 
     public bool TimeToActivate()
