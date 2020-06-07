@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
             m_gameTime += Time.deltaTime;
 
             CheckPauseMenuRequest();
+            CheckEndgameCondition();
         }
     }
 

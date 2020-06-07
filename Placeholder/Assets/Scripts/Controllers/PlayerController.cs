@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     public bool GetIsDead()
     {
-        return health > 0;
+        return health <= 0;
     }
 
     public void OnTakeDamage(int damage)
