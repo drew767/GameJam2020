@@ -18,7 +18,7 @@ public class WeaponScript : MonoBehaviour {
 	public int runningSpeed = 5;
 
 	public float BulletsInClip { get { return bulletsInTheGun; } }
-	public float GetBylletsInTheGun()
+	public float GetBylletsFromTheGun()
 	{
 		if(endlessAmmo)
 		{
@@ -29,7 +29,17 @@ public class WeaponScript : MonoBehaviour {
 		bulletsInTheGun = 0;
 		return tmp;
 	}
-	float bulletsInTheGun = 0;
+
+    public float GetBylletsInTheGun2()
+    {
+        if (endlessAmmo)
+        {
+            return 0;
+        }
+
+        return bulletsInTheGun;
+    }
+    float bulletsInTheGun = 0;
 	public float amountOfBulletsPerLoad = 0;
 
 	private Transform player;

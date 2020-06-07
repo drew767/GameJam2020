@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine.UI;
 
 public class LayoutHUD : MonoBehaviour, ILayoutItem
 {
@@ -14,10 +15,14 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
     #endregion
 
     public TextMeshProUGUI m_timer;
-
+    public TextMeshProUGUI m_bullets;
+    public TextMeshProUGUI m_kills;
     // Start is called before the first frame update
     void Start()
     {
+        EventSystem.RegisterListener<OnPortalEndTrigger>(OnEndTriggerPortal);
+        EventSystem.RegisterListener<OnPortalBeginTrigger>(OnBeginTriggerPortal);
+        EventSystem.RegisterListener<OnPortalDesstroyedEvent>(OnPortalDesstroyedEvent);
     }
 
     // Update is called once per frame
@@ -26,7 +31,12 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
         m_timer.text = GameManager.GetInstance().GetGameTimeInString();
         UpdatePortalProgress();
         UpdateWeaponStats();
+        UpdatePlayerHealth();
+        UpdateKills();
     }
+
+    public Slider portalDestruction;
+    public Slider health;
 
     PortalTrigger m_lastTriggeredPortal;
 
@@ -35,7 +45,6 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
         m_lastTriggeredPortal = null;
         // show message that portal closed
         HidePortalProgress();
-        UpdatePlayerHealth();
     }
     private void OnBeginTriggerPortal(object incomingEvent) 
     {
@@ -51,6 +60,11 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
     public GameObject progressBarPortal;
     private void HidePortalProgress()
     {
+        if (progressBarPortal == null)
+        {
+            return;
+        }
+
         progressBarPortal.SetActive(false);
     }
 
@@ -63,22 +77,42 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
     {
         if (m_lastTriggeredPortal)
         {
-            // update it
-            float progress = m_lastTriggeredPortal.GetProgress();
+            portalDestruction.value = m_lastTriggeredPortal.GetProgress();
         }
     }
 
     void UpdatePlayerHealth()
     {
-        int health = GameManager.GetInstance().Player.GetComponent<PlayerController>().health;
+        health.value = GameManager.GetInstance().Player.GetComponent<PlayerController>().health / 100.0f;
     }
 
     void UpdateWeaponStats()
     {
         WeaponInventory wi = GameManager.GetInstance().Player.gameObject.GetComponent<WeaponInventory>();
-        //wi.weaponBulletsIHave;
-        //wi.currentGunScript.GetBylletsInTheGun();
-        //wi.currentGunScript.amountOfBulletsPerLoad;
-        //wi.currentGunScript.endlessAmmo;
+        int total = 0;
+        int inTheGun = 0;
+
+        if (wi.currentGunScript == null)
+        {
+            return;
+        }
+
+        if (wi.currentGunScript.endlessAmmo)
+        {
+            total = 9999;
+            inTheGun = 11;
+        }
+        else
+        {
+            total = (int)wi.weaponBulletsIHave;
+            inTheGun = (int)wi.currentGunScript.GetBylletsInTheGun2();
+        }
+        m_bullets.text = inTheGun.ToString() + " / " + total.ToString();
     }
+
+    private void UpdateKills()
+    {
+        m_kills.text = GameManager.GetInstance().kills.ToString();
+    }
+
 }

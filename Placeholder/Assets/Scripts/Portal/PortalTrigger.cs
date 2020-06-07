@@ -33,11 +33,13 @@ public class PortalTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        EventSystem.SendEvent(new OnPortalBeginTrigger() { portalTrigger = this });
         m_playerIsInside = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        EventSystem.SendEvent(new OnPortalEndTrigger() { });
         m_playerIsInside = false;
     }
 }

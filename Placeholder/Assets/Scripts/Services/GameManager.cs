@@ -31,7 +31,14 @@ public class GameManager : MonoBehaviour
         FindPlayer();
         FindPortalManager();
         FindPlayerSpawmPoint();
+        EventSystem.RegisterListener<MobDied>(OnMobDied);
     }
+    public int kills = 0;
+    private void OnMobDied(object incomingEvent) 
+    {
+        kills++;
+    }
+
     GameObject playerSpawnPoint = null;
     void FindPlayer()
     {
@@ -109,6 +116,7 @@ public class GameManager : MonoBehaviour
     public void PrepareToStartGame() 
     {
         player.transform.position = playerSpawnPoint.transform.position;
+        kills = 0;
     }
 
     public void CheckEndgameCondition() 
