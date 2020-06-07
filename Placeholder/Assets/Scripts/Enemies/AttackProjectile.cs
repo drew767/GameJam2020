@@ -75,7 +75,7 @@ public class AttackProjectile : MonoBehaviour, IPooledObject
 			other.gameObject.SendMessage("OnTakeDamage", m_damage);
 			DestroyProjectile();
 		}
-		else if(m_vfx != null && !other.tag.Equals("Enemy"))
+		else if(!other.tag.Equals("Enemy"))
 		{
 			DestroyProjectile();
 		}
