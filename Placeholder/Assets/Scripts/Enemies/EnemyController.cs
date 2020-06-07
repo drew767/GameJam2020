@@ -148,12 +148,31 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 	bool UpdateAttackPossibility()
 	{
+		if(m_attackTarget == Vector3.zero)
+		{
+			return false;
+		}
+
 		if(NeedMoveCloser)
 		{
 			return false;
 		}
 
-		//TODO: Add checks for barriers and etc
+		LayerMask mask = ~(1 << 12);
+		RaycastHit hitInfo;
+		UnityEngine.Debug.DrawLine(transform.position, m_attackTarget, Color.blue, 1.0f);
+		bool hit = Physics.Raycast(transform.position, (m_attackTarget - transform.position).normalized, out hitInfo, m_attackDistance, mask);
+		if(hit)
+		{
+			if(!hitInfo.transform.gameObject.tag.Equals("Player"))
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
 
 		return true;
 	}
