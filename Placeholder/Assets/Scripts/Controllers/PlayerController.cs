@@ -214,7 +214,17 @@ public class PlayerController : MonoBehaviour
             case EPickupType.Ammo:
                 break;
             case EPickupType.Health:
+            {
+                if (health < 100)
+                {
+                    health += 25;
+                    if (health > 100)
+                    {
+                        health = 100;
+                    }
+                }
                 break;
+            }
             default:
                 break;
         }

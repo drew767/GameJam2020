@@ -10,6 +10,10 @@ public enum SelectionMenuStyle
 public class WeaponInventory : MonoBehaviour {
 	[Tooltip("Current weapon gameObject.")]
 	public GameObject currentGun;
+	public WeaponScript currentGunScript;
+	public float weaponBulletsIHave = 35;
+
+
 	private Animator currentHAndsAnimator;
 	private int currentGunCounter = 0;
 
@@ -152,10 +156,19 @@ public class WeaponInventory : MonoBehaviour {
 				currentHAndsAnimator.SetBool("changingWeapon", true);
 
 				yield return new WaitForSeconds(0.8f);//0.8 time to change waepon, but since there is no change weapon animation there is no need to wait fo weapon taken down
-				Destroy(currentGun);
+
+                if (currentGunScript)
+                {
+                    weaponBulletsIHave += currentGunScript.GetBylletsInTheGun();
+                }
+                Destroy(currentGun);
 
 				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+                currentGunScript = currentGun.GetComponent<WeaponScript>();
+                currentGunScript.SetWeaponInventory(this);
+				currentGunScript.SilentReload();
+
 				AssignHandsAnimator(currentGun);
 			}
 			else if(currentGun.name.Contains("Sword")){
@@ -169,12 +182,19 @@ public class WeaponInventory : MonoBehaviour {
 
 				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
-				AssignHandsAnimator(currentGun);
+                AssignHandsAnimator(currentGun);
 			}
 		}
 		else{
 			GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
 			currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+            if (currentGunScript)
+            {
+                weaponBulletsIHave += currentGunScript.GetBylletsInTheGun();
+            }
+            currentGunScript = currentGun.GetComponent<WeaponScript>();
+            currentGunScript.SetWeaponInventory(this);
+			currentGunScript.SilentReload();
 
 			AssignHandsAnimator(currentGun);
 		}
