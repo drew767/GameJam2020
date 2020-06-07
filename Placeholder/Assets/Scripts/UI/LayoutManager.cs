@@ -74,6 +74,11 @@ public class LayoutManager : MonoBehaviour
     }
     public void PushLayout(ELayoutId id, bool disablePreviousLayout = true)
     {
+        if (m_activatedLayouts.Count > 0 && id == m_activatedLayouts[m_activatedLayouts.Count - 1].m_id)
+        {
+            return;
+        }
+
         GameObject refer = m_layoutDictionary[id];
         if (refer == null)
         {

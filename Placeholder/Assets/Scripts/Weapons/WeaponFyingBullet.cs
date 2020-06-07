@@ -19,19 +19,29 @@ public class WeaponFyingBullet : MonoBehaviour
         rb.velocity = transform.forward * m_speed;
     }
 
-	private void OnCollisionEnter(Collision collision)
-	{
-		if(collision.gameObject.tag.Equals("Enemy"))
-		{
-            collision.gameObject.SendMessage("TakeDamage", m_damage);
-		}
+    private void OnHitGameObject(GameObject go)
+    {
+        if (go.tag.Equals("Enemy"))
+        {
+            go.SendMessage("TakeDamage", m_damage);
+        }
 
-        if(m_explosion)
-		{
+        if (m_explosion)
+        {
             GameObject.Instantiate(m_explosion, transform.position, Quaternion.identity);
-		}
+        }
 
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        OnHitGameObject(other.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+	{
+        OnHitGameObject(collision.gameObject);
 	}
 
 	void Update()

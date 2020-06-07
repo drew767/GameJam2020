@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_gameIsTicking)
+        if (m_gameIsTicking && !m_gameIsFinished)
         {
             m_gameTime += Time.deltaTime;
 
@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
 
     public void StartPlayingGame()
     {
+        player.health = 100;
         ClearGame();
         PrepareToStartGame();
 
@@ -126,6 +127,8 @@ public class GameManager : MonoBehaviour
 
         if (m_gameIsFinished)
         {
+            PauseGame();
+            ClearGame();
             LayoutManager.GetInstance().PushLayout(ELayoutId.GameEndScreen);
         }
     }
