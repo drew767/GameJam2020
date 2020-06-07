@@ -17,8 +17,14 @@ public class WeaponScript : MonoBehaviour {
 	[Tooltip("Speed is determined via gun because not every gun has same properties or weights so you MUST set up your speeds here")]
 	public int runningSpeed = 5;
 
+	public float BulletsInClip { get { return bulletsInTheGun; } }
 	public float GetBylletsInTheGun()
 	{
+		if(endlessAmmo)
+		{
+			return 0;
+		}
+
 		float tmp = bulletsInTheGun;
 		bulletsInTheGun = 0;
 		return tmp;
@@ -516,7 +522,7 @@ public class WeaponScript : MonoBehaviour {
 
 
 			yield return new WaitForSeconds (reloadChangeBulletsTime - 0.5f);//minus ovo vrijeme cekanja na yield
-			if (meeleAttack == false && pmS.maxSpeed != runningSpeed) {
+			if (meeleAttack == false){ // && pmS.maxSpeed != runningSpeed) {
 				//print ("tu sam");
 				if (player.GetComponent<PlayerController> ()._freakingZombiesSound)
 					player.GetComponent<PlayerController> ()._freakingZombiesSound.Play ();

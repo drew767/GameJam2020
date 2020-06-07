@@ -110,7 +110,9 @@ public class WeaponInventory : MonoBehaviour {
 		/*
 		 * Keypad numbers
 		 */
-		if(Input.GetKeyDown(KeyCode.Alpha1) && currentGunCounter != 0){
+		bool notEnoughtBullets = (weaponBulletsIHave <= 0 && currentGunScript.BulletsInClip.Equals(0.0f));
+
+		if ((notEnoughtBullets || Input.GetKeyDown(KeyCode.Alpha1)) && currentGunCounter != 0){
 			switchWeaponCooldown = 0;
 			currentGunCounter = 0;
 			StartCoroutine("Spawn",currentGunCounter);
@@ -120,19 +122,19 @@ public class WeaponInventory : MonoBehaviour {
 			currentGunCounter = 1;
 			StartCoroutine("Spawn",currentGunCounter);
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha3) && currentGunCounter != 1)
+		if (Input.GetKeyDown(KeyCode.Alpha3) && currentGunCounter != 2)
 		{
 			switchWeaponCooldown = 0;
 			currentGunCounter = 2;
 			StartCoroutine("Spawn", currentGunCounter);
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha4) && currentGunCounter != 1)
+		if (Input.GetKeyDown(KeyCode.Alpha4) && currentGunCounter != 3)
 		{
 			switchWeaponCooldown = 0;
 			currentGunCounter = 3;
 			StartCoroutine("Spawn", currentGunCounter);
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha5) && currentGunCounter != 1)
+		if (Input.GetKeyDown(KeyCode.Alpha5) && currentGunCounter != 4)
 		{
 			switchWeaponCooldown = 0;
 			currentGunCounter = 4;
