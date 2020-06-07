@@ -30,13 +30,20 @@ public class GameManager : MonoBehaviour
         FindPooolManager();
         FindPlayer();
         FindPortalManager();
+        FindPlayerSpawmPoint();
     }
-
+    GameObject playerSpawnPoint = null;
     void FindPlayer()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<PlayerController>();
         Debug.Assert(player, "Player is not in scene");
+    }
+
+    void FindPlayerSpawmPoint()
+    {
+        playerSpawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawnPoint");
+        Debug.Assert(playerSpawnPoint, "PlayerSpawnPoint is not in scene");
     }
 
     void FindPortalManager()
@@ -99,7 +106,10 @@ public class GameManager : MonoBehaviour
     {
         InvalidateAllSpawnedObjects();
     }
-    public void PrepareToStartGame() { }
+    public void PrepareToStartGame() 
+    {
+        player.transform.position = playerSpawnPoint.transform.position;
+    }
 
     public void CheckEndgameCondition() 
     {
