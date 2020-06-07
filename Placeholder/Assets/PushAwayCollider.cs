@@ -15,6 +15,7 @@ public class PushAwayCollider : MonoBehaviour
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+
     }
 
     float RandomAngle()
@@ -27,7 +28,44 @@ public class PushAwayCollider : MonoBehaviour
         return Quaternion.Euler(RandomAngle(), RandomAngle(), RandomAngle());
     }
 
-    List<Vector3> m_knownPoints = new List<Vector3>();
+    class FixedQueue<T>
+    {
+        private int m_capacity;
+        private int m_size;
+        private int m_tailIndex;
+        private T[] m_data;
+        public FixedQueue(int maxSize)
+        {
+            m_capacity = maxSize;
+            m_data = new T[m_capacity];
+            m_size = 0;
+            m_tailIndex = 0;
+        }
+
+        public void Add(T value)
+        {
+            m_data[m_tailIndex] = value;
+            m_tailIndex = (m_tailIndex + 1) % m_capacity;
+            if (m_size < m_capacity)
+                m_size++;
+        }
+
+        public int Count { get { return m_size; } }
+
+        private int modifyIndex(int i)
+        {
+            return (m_tailIndex + i) % m_size;
+        }
+
+        public T this[int i]
+        {
+            get { return m_data[modifyIndex(i)]; }
+            set { m_data[modifyIndex(i)] = value; }
+        }
+    }
+
+
+    FixedQueue<Vector3> m_knownPoints = new FixedQueue<Vector3>(30);
     private void FixedUpdate()
     {
         RaycastHit hit;
@@ -35,8 +73,6 @@ public class PushAwayCollider : MonoBehaviour
         if(Physics.Raycast(ray, out hit, radius, ~0))
         {
             m_knownPoints.Add(hit.point);
-            if(m_knownPoints.Count > 50)
-               m_knownPoints.RemoveAt(0);
         }
 
         if (m_knownPoints.Count > 0)
