@@ -13,7 +13,8 @@ public enum ESpawnItemType
     Enemy4,
     Enemy5,
     ProjectileBlackHole,
-    MeleeAttack
+    MeleeAttack,
+    AirEnemy,
 }
 
 public class ObjectPool : MonoBehaviour

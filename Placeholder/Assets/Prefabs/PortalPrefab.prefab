@@ -160,6 +160,8 @@ MonoBehaviour:
     m_weight: 50
   - m_type: 3
     m_weight: 50
+  - m_type: 8
+    m_weight: 15
   m_timeNeededToPortalDestroy: 15
   m_trigerRef: {fileID: 7793533207927287917}
 --- !u!1 &6557209637079324324
