@@ -9804,7 +9804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_explosionRadius: 3
-  m_explosionDamage: 5
+  m_explosionDamage: 80
 --- !u!1 &3099169067984904955
 GameObject:
   m_ObjectHideFlags: 0

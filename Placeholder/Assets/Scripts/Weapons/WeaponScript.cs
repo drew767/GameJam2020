@@ -26,7 +26,7 @@ public class WeaponScript : MonoBehaviour {
 		}
 
 		float tmp = bulletsInTheGun;
-		bulletsInTheGun = 0;
+ф		bulletsInTheGun = 0;
 		return tmp;
 	}
 	float bulletsInTheGun = 0;
