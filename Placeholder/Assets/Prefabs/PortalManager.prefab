@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117913cadaca50b4c85aa1a72a22c8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_portalPrefab: {fileID: 4192606983392549927, guid: 930dc44c4ae88a84f831b50afc156115, type: 3}
+  m_timeBetweenSpawnPortal: 18
 --- !u!1 &7319015949219213978
 GameObject:
   m_ObjectHideFlags: 0
