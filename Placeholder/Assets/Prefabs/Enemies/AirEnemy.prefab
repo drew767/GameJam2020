@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 7317052250772033445}
   - component: {fileID: 7317052250772033466}
   - component: {fileID: 7317052250772033440}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: AirEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -407,8 +407,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7317052250772033467}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ad16c0d795be1db41974df46da95c962, type: 3}
-  m_Controller: {fileID: 9100000, guid: 96afd79309c7f554daf252639e29054a, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 3bd42302a65854d409e87fe932878242, type: 3}
+  m_Controller: {fileID: 9100000, guid: d3a74878aa3070546bd0b4fb8985c75f, type: 2}
   m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
