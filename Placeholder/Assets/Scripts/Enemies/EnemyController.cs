@@ -223,8 +223,10 @@ public class EnemyController : MonoBehaviour, IPooledObject
 		}
 		else
 		{
-			Vector3 direction = (m_moveTarget - transform.position).normalized;
-			direction = new Vector3(direction.x, 0.0f, direction.z);
+			Vector3 toTarget = m_moveTarget - transform.position;
+			Vector3 direction = toTarget.normalized;
+			//direction = new Vector3(direction.x, 0.0f, direction.z);
+
 			m_rb.velocity = direction * m_moveSpeed * Time.deltaTime * 10.0f;
 			UnityEngine.Debug.DrawLine(transform.position, m_moveTarget, Color.red);
 		}
