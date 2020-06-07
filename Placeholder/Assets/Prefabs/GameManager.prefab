@@ -76,10 +76,19 @@ MonoBehaviour:
     m_defaultReserv: 5
   - m_id: 1
     m_prefab: {fileID: 1109091762081716210, guid: 6a0921c8b1d49db4fb6b4e43cd4fe3d3, type: 3}
-    m_defaultReserv: 1
+    m_defaultReserv: 10
   - m_id: 2
     m_prefab: {fileID: 1109091762081716210, guid: a05a6bdc2b33d4040b665b6eda6cb64d, type: 3}
-    m_defaultReserv: 1
+    m_defaultReserv: 10
+  - m_id: 3
+    m_prefab: {fileID: 1109091762081716210, guid: a20d2704017981b40883700bed2d6a6b, type: 3}
+    m_defaultReserv: 10
+  - m_id: 6
+    m_prefab: {fileID: 8531111154931281119, guid: 70893da5922805d4e99b3418b5cf7073, type: 3}
+    m_defaultReserv: 15
+  - m_id: 7
+    m_prefab: {fileID: 8531111154931281119, guid: 7c34b63f714cc024498cb8efb8669f39, type: 3}
+    m_defaultReserv: 15
 --- !u!1 &7300193189430823878
 GameObject:
   m_ObjectHideFlags: 0
