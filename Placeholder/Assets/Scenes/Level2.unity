@@ -6900,6 +6900,10 @@ PrefabInstance:
       propertyPath: progressBarPortal
       value: 
       objectReference: {fileID: 1438327312}
+    - target: {fileID: 5187375155162930561, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5187375155547927112, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
       propertyPath: m_Name
       value: UI
@@ -6987,6 +6991,36 @@ PrefabInstance:
     - target: {fileID: 5187375155547927116, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187375155592988930, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
+      propertyPath: m_text
+      value: 'ghjfgh
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5497541601764975024, guid: f767c4066a00fc443ba2d0c64e3a35c1, type: 3}
       propertyPath: m_textInfo.characterCount

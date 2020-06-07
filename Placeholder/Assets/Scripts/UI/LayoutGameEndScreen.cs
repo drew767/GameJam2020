@@ -20,7 +20,7 @@ public class LayoutGameEndScreen : MonoBehaviour, ILayoutItem
     }
     public void Restart()
     {
-        // RELOAD LEVEL
+        GameManager.GetInstance().StartPlayingGame();
         LayoutManager.GetInstance().ClearLayoutStack();
         LayoutManager.GetInstance().PushLayout(ELayoutId.Hud);
     }
