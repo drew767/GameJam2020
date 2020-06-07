@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 	}
 	public eState PreviousState { get { return m_previousState; } }
 	public bool CanMoveWhileAttack { get { return m_canMoveWhileAttack; } }
-
+	public bool NeedMoveCloser { get; set; }
 	bool CanAttack { get; set; }
 
 	float m_attackCooldownTime = 0.0f;
@@ -98,6 +98,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 		m_attackCooldownTime -= Time.deltaTime;
 
+		NeedMoveCloser = UpdateNeedMoveCloser();
 		CanAttack = UpdateAttackPossibility();
 		if (CanAttack)
 		{
@@ -112,18 +113,12 @@ public class EnemyController : MonoBehaviour, IPooledObject
 				UpdateIdle();
 				break;
 			case eState.MOVE:
-				if(m_moveTarget != Vector3.zero)
-				{
-					UpdateMove();
-				}
+				UpdateMove();
 				break;
 			case eState.ATTACK:
 				if(m_attackTarget != Vector3.zero)
 				{
 					UpdateAttack();
-				}
-				if(m_canMoveWhileAttack && m_moveTarget != Vector3.zero)
-				{
 					UpdateMove();
 				}
 				break;
@@ -135,7 +130,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 		}
     }
 
-	bool NeedMoveCloser()
+	bool UpdateNeedMoveCloser()
 	{
 		if (m_attackTarget == Vector3.zero)
 		{
@@ -152,7 +147,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 	bool UpdateAttackPossibility()
 	{
-		if(NeedMoveCloser())
+		if(NeedMoveCloser)
 		{
 			return false;
 		}
@@ -176,7 +171,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 		m_moveTarget = player.transform.position;
 		m_attackTarget = player.transform.position;
 
-		if(!NeedMoveCloser())
+		if(!NeedMoveCloser)
 		{
 			if(m_attackTarget != Vector3.zero)
 			{
@@ -200,7 +195,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 		if(m_attackTarget != Vector3.zero)
 		{
-			if(UsingNavMesh)
+			if(UsingNavMesh && NeedMoveCloser)
 			{
 				transform.LookAt(new Vector3(m_navMeshAgent.steeringTarget.x, transform.position.y, m_navMeshAgent.steeringTarget.z));
 			}
@@ -221,7 +216,12 @@ public class EnemyController : MonoBehaviour, IPooledObject
 
 	protected virtual void UpdateMove()
 	{
-		if(UsingNavMesh)
+		if(!NeedMoveCloser)
+		{
+			return;
+		}
+
+		if (UsingNavMesh)
 		{
 			m_navMeshAgent.destination = m_moveTarget;
 			UnityEngine.Debug.DrawLine(transform.position, m_navMeshAgent.steeringTarget, Color.red);
@@ -254,7 +254,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 				attackProjectile.Setup();
 			}
 		}
-		else if(NeedMoveCloser())
+		else if(NeedMoveCloser)
 		{
 			State = eState.MOVE;
 		}

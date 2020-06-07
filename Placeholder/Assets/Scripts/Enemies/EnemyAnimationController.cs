@@ -5,15 +5,17 @@ using UnityEngine;
 public class EnemyAnimationController : MonoBehaviour
 {
     Animator animator = null;
+    EnemyController enemy = null;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        enemy = GetComponent<EnemyController>();
     }
 
     void Update()
     {
-        
+        animator.SetBool("NeedMoveCloser", enemy.NeedMoveCloser);
     }
 
     void OnStateChanged(EnemyController enemy)
