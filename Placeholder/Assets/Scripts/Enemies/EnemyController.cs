@@ -284,7 +284,7 @@ public class EnemyController : MonoBehaviour, IPooledObject
 	IEnumerator DestroyObject()
 	{
 		State = eState.DEAD;
-		//GetComponent<CapsuleCollider>().enabled = false;
+		GetComponent<CapsuleCollider>().enabled = false;
 		m_rb.velocity = Vector3.zero;
 		if(m_navMeshAgent)
 		{

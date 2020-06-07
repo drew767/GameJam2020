@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6bbf1cb32e4cc4a8a9d102097412a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 60
+  m_damage: 100
   maxDistance: 1000000
   decalHitWall: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
   floatInfrontOfWall: 0.1

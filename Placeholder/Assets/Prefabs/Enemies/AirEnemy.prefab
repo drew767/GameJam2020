@@ -379,9 +379,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  m_healt: 100
-  m_moveSpeed: 20
-  m_attackDistance: 30
+  m_healt: 20
+  m_moveSpeed: 30
+  m_attackDistance: 25
   m_attackCooldown: 7
   m_canMoveWhileAttack: 1
   m_attackProjectileType: 6

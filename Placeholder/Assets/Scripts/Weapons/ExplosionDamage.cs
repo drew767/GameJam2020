@@ -9,7 +9,7 @@ public class ExplosionDamage : MonoBehaviour
     [SerializeField]
     int m_explosionDamage = 5;
 
-    void Start()
+    void Awake()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, m_explosionRadius);   
         foreach(var collider in hitColliders)

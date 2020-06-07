@@ -87,7 +87,7 @@ MonoBehaviour:
   gunPrecision_aiming: 70
   cameraZoomRatio_notAiming: 60
   cameraZoomRatio_aiming: 40
-  secondCameraZoomRatio_notAiming: 60
+  secondCameraZoomRatio_notAiming: 100
   secondCameraZoomRatio_aiming: 55
   gunPrecision: 0
   shoot_sound_source: {fileID: 8263354}
