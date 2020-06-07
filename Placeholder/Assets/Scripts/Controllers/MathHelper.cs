@@ -9,6 +9,11 @@ public class MathHelper
         return new Vector3(v.x, 0f, v.z);
     }
 
+    public static float Sqr(float x)
+    {
+        return x * x;
+    }
+
     public static Vector3 FromVector2(Vector2 v)
     {
         return new Vector3(v.x, 0f, v.y);
