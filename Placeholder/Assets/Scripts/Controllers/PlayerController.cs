@@ -212,7 +212,10 @@ public class PlayerController : MonoBehaviour
         switch (pickupType)
         {
             case EPickupType.Ammo:
+            {
+                gameObject.GetComponent<WeaponInventory>().weaponBulletsIHave += 25;
                 break;
+            }
             case EPickupType.Health:
             {
                 if (health < 100)

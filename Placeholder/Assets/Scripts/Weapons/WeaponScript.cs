@@ -459,26 +459,33 @@ public class WeaponScript : MonoBehaviour {
 
 	}
 
-
+	public bool endlessAmmo = false;
 	public void SilentReload()
 	{
-        if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad >= 0)
-        {
-            m_inventory.weaponBulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
-            bulletsInTheGun = amountOfBulletsPerLoad;
-        }
-        else if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad < 0)
-        {
-            float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
-            if (m_inventory.weaponBulletsIHave - valueForBoth < 0)
+		if (endlessAmmo)
+		{
+			bulletsInTheGun = amountOfBulletsPerLoad;
+		}
+		else
+		{
+            if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad >= 0)
             {
-                bulletsInTheGun += m_inventory.weaponBulletsIHave;
-                m_inventory.weaponBulletsIHave = 0;
+                m_inventory.weaponBulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
+                bulletsInTheGun = amountOfBulletsPerLoad;
             }
-            else
+            else if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad < 0)
             {
-                m_inventory.weaponBulletsIHave -= valueForBoth;
-                bulletsInTheGun += valueForBoth;
+                float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
+                if (m_inventory.weaponBulletsIHave - valueForBoth < 0)
+                {
+                    bulletsInTheGun += m_inventory.weaponBulletsIHave;
+                    m_inventory.weaponBulletsIHave = 0;
+                }
+                else
+                {
+                    m_inventory.weaponBulletsIHave -= valueForBoth;
+                    bulletsInTheGun += valueForBoth;
+                }
             }
         }
     }
@@ -491,7 +498,7 @@ public class WeaponScript : MonoBehaviour {
 	public float reloadChangeBulletsTime;
 	IEnumerator Reload_Animation()
 	{
-		if(m_inventory.weaponBulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
+		if(((m_inventory.weaponBulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad) || endlessAmmo) && !reloading/* && !aiming*/){
 
 			if (reloadSound_source.isPlaying == false && reloadSound_source != null) 
 			{
@@ -515,26 +522,8 @@ public class WeaponScript : MonoBehaviour {
 					player.GetComponent<PlayerController> ()._freakingZombiesSound.Play ();
 				else
 					print ("Missing Freaking Zombies Sound");
-				
-				if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad >= 0) 
-				{
-					m_inventory.weaponBulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
-					bulletsInTheGun = amountOfBulletsPerLoad;
-				} 
-				else if (m_inventory.weaponBulletsIHave - amountOfBulletsPerLoad < 0) 
-				{
-					float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
-					if (m_inventory.weaponBulletsIHave - valueForBoth < 0)
-					{
-						bulletsInTheGun += m_inventory.weaponBulletsIHave;
-						m_inventory.weaponBulletsIHave = 0;
-					} 
-					else 
-					{
-						m_inventory.weaponBulletsIHave -= valueForBoth;
-						bulletsInTheGun += valueForBoth;
-					}
-				}
+
+				SilentReload();
 			} else {
 				reloadSound_source.Stop ();
 
