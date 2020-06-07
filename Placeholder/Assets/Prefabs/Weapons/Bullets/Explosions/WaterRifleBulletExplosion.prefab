@@ -9750,6 +9750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304763869332708}
   - component: {fileID: 7642902849174227524}
+  - component: {fileID: 3902029882476324432}
   m_Layer: 0
   m_Name: WaterRifleBulletExplosion
   m_TagString: Untagged
@@ -9788,3 +9789,17 @@ MonoBehaviour:
   m_particles:
   - {fileID: 198097850111067526}
   - {fileID: 198578896622907030}
+--- !u!114 &3902029882476324432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500378020736912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cefb3f16aad67143ac9156fbd0821d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_explosionRadius: 1
+  m_explosionDamage: 5
