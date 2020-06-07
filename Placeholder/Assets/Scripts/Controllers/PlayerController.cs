@@ -146,6 +146,7 @@ public class PlayerController : MonoBehaviour
         m_dashTimeout = new Timeout(dashCooldown);
         m_dashContinue = new Timeout(dashDuration);
         m_dashCharges--;
+        _dashSound.Play();
     }
 
     void Jump()
@@ -277,4 +278,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource _walkSound;
     [Tooltip("Run Sound player makes.")]
     public AudioSource _runSound;
+    [Tooltip("When player dashes.")]
+    public AudioSource _dashSound;
+    [Tooltip("When player falls.")]
+    public AudioSource _landingSound;
 }
