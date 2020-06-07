@@ -51,12 +51,10 @@ MonoBehaviour:
   mls: {fileID: 0}
   walkingSpeed: 3
   runningSpeed: 5
-  bulletsIHave: 9999
-  bulletsInTheGun: 12
   amountOfBulletsPerLoad: 12
   currentGunPosition: {x: 0, y: 0, z: 0}
   restPlacePosition: {x: -0.07, y: -0.06, z: 0.4}
-  aimPlacePosition: {x: 0, y: -0.03, z: 0.3}
+  aimPlacePosition: {x: -0.1, y: -0.03, z: 0.3}
   gunAimTime: 0.05
   reloading: 0
   mouseSensitvity_notAiming: 4
@@ -68,7 +66,7 @@ MonoBehaviour:
   rotationLagTime: 0
   forwardRotationAmount: {x: 1, y: 1}
   bulletSpawnPlace: {fileID: 3849275942093782068}
-  bullet: {fileID: 128836, guid: 94a45112080934f49ab5ba060439ceb0, type: 3}
+  bullet: {fileID: 7009579885263376862, guid: 6b3a0d80c962b394880b13fac782ed64, type: 3}
   roundsPerSecond: 50
   recoilAmount_z: 0.5
   recoilAmount_x: 0.5
