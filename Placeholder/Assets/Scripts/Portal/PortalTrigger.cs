@@ -26,6 +26,11 @@ public class PortalTrigger : MonoBehaviour
         }
     }
 
+    public float GetProgress()
+    {
+        return m_timeSincePlayerInside / m_timeNeedToWaitToDestroy;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         m_playerIsInside = true;

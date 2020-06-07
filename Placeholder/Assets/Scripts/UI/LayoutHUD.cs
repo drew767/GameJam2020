@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 public class LayoutHUD : MonoBehaviour, ILayoutItem
 {
@@ -24,6 +25,7 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
     {
         m_timer.text = GameManager.GetInstance().GetGameTimeInString();
         UpdatePortalProgress();
+        UpdateWeaponStats();
     }
 
     PortalTrigger m_lastTriggeredPortal;
@@ -33,6 +35,7 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
         m_lastTriggeredPortal = null;
         // show message that portal closed
         HidePortalProgress();
+        UpdatePlayerHealth();
     }
     private void OnBeginTriggerPortal(object incomingEvent) 
     {
@@ -45,14 +48,15 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
         HidePortalProgress();
     }
 
+    public GameObject progressBarPortal;
     private void HidePortalProgress()
     {
-
+        progressBarPortal.SetActive(false);
     }
 
     private void ShowPortalProgress()
     {
-
+        progressBarPortal.SetActive(true);
     }
 
     private void UpdatePortalProgress()
@@ -60,6 +64,21 @@ public class LayoutHUD : MonoBehaviour, ILayoutItem
         if (m_lastTriggeredPortal)
         {
             // update it
+            float progress = m_lastTriggeredPortal.GetProgress();
         }
+    }
+
+    void UpdatePlayerHealth()
+    {
+        int health = GameManager.GetInstance().Player.GetComponent<PlayerController>().health;
+    }
+
+    void UpdateWeaponStats()
+    {
+        WeaponInventory wi = GameManager.GetInstance().Player.gameObject.GetComponent<WeaponInventory>();
+        //wi.weaponBulletsIHave;
+        //wi.currentGunScript.GetBylletsInTheGun();
+        //wi.currentGunScript.amountOfBulletsPerLoad;
+        //wi.currentGunScript.endlessAmmo;
     }
 }

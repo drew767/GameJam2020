@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Other")]
     [SerializeField]
-    int health = 100;
+    public int health = 100;
 
     Timeout m_jumpTimeout;
     Timeout m_dashTimeout;
