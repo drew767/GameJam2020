@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
+        //else if (Instance != this)
+        //{
+        //    Destroy(gameObject);
+        //}
 
         PauseGame();
     }
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         m_gameIsTicking = false;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void ResumeGame()
@@ -127,9 +127,10 @@ public class GameManager : MonoBehaviour
 
         if (m_gameIsFinished)
         {
-            PauseGame();
-            ClearGame();
-            LayoutManager.GetInstance().PushLayout(ELayoutId.GameEndScreen);
+            Application.Quit();
+            //PauseGame();
+            //ClearGame();
+            //LayoutManager.GetInstance().PushLayout(ELayoutId.GameEndScreen);
         }
     }
 

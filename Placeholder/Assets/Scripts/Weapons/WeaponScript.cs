@@ -61,7 +61,7 @@ public class WeaponScript : MonoBehaviour {
 		cameraComponent = mainCamera.GetComponent<Camera>();
 		pmS = player.GetComponent<PlayerController>();
 
-		hitMarker = transform.Find ("hitMarkerSound").GetComponent<AudioSource> ();
+		//hitMarker = transform.Find ("hitMarkerSound").GetComponent<AudioSource> ();
 
 		startLook = mouseSensitvity_notAiming;
 		startAim = mouseSensitvity_aiming;
@@ -420,7 +420,7 @@ public class WeaponScript : MonoBehaviour {
 	public float gunPrecision;
 
 	[Tooltip("Audios for shootingSound, and reloading.")]
-	public AudioSource shoot_sound_source, reloadSound_source;
+	public AudioSource shoot_sound_source, reloadSound_source;	
 	[Tooltip("Sound that plays after successful attack bullet hit.")]
 	public static AudioSource hitMarker;
 
@@ -428,7 +428,7 @@ public class WeaponScript : MonoBehaviour {
 	* Sounds that is called upon hitting the target.
 	*/
 	public static void HitMarkerSound(){
-		hitMarker.Play();
+		//hitMarker.Play();
 	}
 
 	[Tooltip("Array of muzzel flashes, randmly one will appear after each bullet.")]
